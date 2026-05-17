@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enrollment Forecast | SoPA 2025–2035 Strategic Plan</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 18px; }
+  body { font-family: 'Georgia', serif; color: #1a1a1a; background: #fff; line-height: 1.6; }
+
+  :root {
+    --navy:  #1B3A6B;
+    --gold:  #C9A84C;
+    --cream: #F8F5EE;
+    --gray:  #6b7280;
+    --light-gray: #f3f4f6;
+    --border: #e5e7eb;
+  }
+
+  /* Header */
+  .site-header {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    gap: 1rem;
+  }
+  .header-brand .school { color: #fff; font-size: 0.95rem; font-weight: bold; }
+  .header-brand .university { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
+  .back-link {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.8rem;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 0.35rem 0.85rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .back-link:hover { background: rgba(255,255,255,0.1); color: #fff; }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #0f2344 0%, #1B3A6B 55%, #2a5298 100%);
+    color: #fff;
+    padding: 3rem 2rem 2.5rem;
+  }
+  .hero-inner { max-width: 1100px; margin: 0 auto; }
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+  .hero h1 { font-size: 2.2rem; font-weight: normal; margin-bottom: 0.6rem; }
+  .hero-sub { font-size: 1rem; color: rgba(255,255,255,0.75); font-style: italic; }
+
+  /* Main */
+  .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+
+  /* BHAG banner */
+  .bhag-banner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .bhag-card {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+  }
+  .bhag-card.gap { background: var(--cream); border: 1px solid var(--border); }
+  .bhag-card .label {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+  .bhag-card.gap .label { color: var(--gray); }
+  .bhag-card .number { font-size: 2.4rem; font-weight: bold; line-height: 1; }
+  .bhag-card.gap .number { color: var(--navy); }
+  .bhag-card .sublabel { font-size: 0.78rem; color: rgba(255,255,255,0.65); margin-top: 0.3rem; }
+  .bhag-card.gap .sublabel { color: var(--gray); }
+
+  /* Chart section */
+  .chart-section {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  .section-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+  .section-title {
+    font-size: 1.4rem;
+    color: var(--navy);
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 0.5rem;
+  }
+  .chart-container { position: relative; height: 320px; }
+
+  /* Division tables */
+  .division-block { margin-bottom: 2.5rem; }
+  .division-header {
+    background: var(--navy);
+    color: #fff;
+    padding: 0.65rem 1rem;
+    border-radius: 6px 6px 0 0;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .forecast-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
+  }
+  .forecast-table th {
+    background: var(--light-gray);
+    color: var(--navy);
+    padding: 0.5rem 0.65rem;
+    text-align: right;
+    font-size: 0.75rem;
+    font-weight: bold;
+    white-space: nowrap;
+    border-bottom: 2px solid var(--border);
+  }
+  .forecast-table th:first-child { text-align: left; }
+  .forecast-table td {
+    padding: 0.45rem 0.65rem;
+    text-align: right;
+    border-bottom: 1px solid var(--border);
+    color: #333;
+  }
+  .forecast-table td:first-child { text-align: left; color: #1a1a1a; }
+  .forecast-table tr:last-child td { border-bottom: none; }
+  .forecast-table tr.subtotal td {
+    font-weight: bold;
+    background: var(--cream);
+    color: var(--navy);
+    border-top: 2px solid var(--border);
+    border-bottom: none;
+  }
+  .forecast-table tr.subtotal td:first-child { font-style: italic; }
+  /* highlight checkpoints */
+  .forecast-table th.checkpoint,
+  .forecast-table td.checkpoint { background: rgba(201,168,76,0.12); font-weight: bold; }
+  .forecast-table tr.subtotal td.checkpoint { background: rgba(201,168,76,0.2); }
+
+  /* teach-out row */
+  .forecast-table tr.teachout td { color: var(--gray); font-style: italic; }
+
+  /* Totals table */
+  .totals-block { margin-bottom: 2.5rem; }
+  .totals-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .totals-table th {
+    background: var(--navy);
+    color: #fff;
+    padding: 0.6rem 0.75rem;
+    text-align: right;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+  .totals-table th:first-child { text-align: left; }
+  .totals-table td {
+    padding: 0.55rem 0.75rem;
+    text-align: right;
+    border-bottom: 1px solid var(--border);
+  }
+  .totals-table td:first-child { text-align: left; font-weight: bold; }
+  .totals-table tr.total-row td { background: var(--navy); color: #fff; font-weight: bold; }
+  .totals-table tr.bhag-row td { background: rgba(201,168,76,0.15); color: var(--navy); }
+  .totals-table tr.gap-row td { background: var(--cream); color: var(--navy); font-style: italic; }
+  .totals-table tr.gap-row td.achieved { color: #10b981; font-weight: bold; font-style: normal; }
+  .totals-table th.checkpoint, .totals-table td.checkpoint { border-left: 2px solid var(--gold); border-right: 2px solid var(--gold); }
+
+  /* Notes table */
+  .notes-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .notes-table th { background: var(--light-gray); color: var(--navy); padding: 0.5rem 0.85rem; text-align: left; font-size: 0.75rem; border-bottom: 2px solid var(--border); }
+  .notes-table td { padding: 0.45rem 0.85rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .notes-table td:first-child { font-weight: bold; color: var(--navy); white-space: nowrap; }
+  .notes-table tr:last-child td { border-bottom: none; }
+  .notes-table tr:nth-child(even) td { background: var(--light-gray); }
+
+  /* Milestone bar */
+  .milestone-bar {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .ms-box { border-radius: 8px; padding: 1rem 1.25rem; font-size: 0.83rem; }
+  .ms-box.short { background: #e8f0fb; border-top: 4px solid #3b82f6; }
+  .ms-box.mid   { background: #fef3c7; border-top: 4px solid #f59e0b; }
+  .ms-box.long  { background: #d1fae5; border-top: 4px solid #10b981; }
+  .ms-box .ms-label { font-weight: bold; color: var(--navy); font-size: 0.8rem; margin-bottom: 0.4rem; }
+  .ms-box .ms-num { font-size: 1.6rem; font-weight: bold; color: var(--navy); }
+  .ms-box .ms-sub { font-size: 0.75rem; color: var(--gray); margin-top: 0.15rem; }
+
+  /* Footer */
+  .site-footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 2rem; font-size: 0.8rem; text-align: center; }
+  .site-footer span { color: var(--gold); }
+
+  @media (max-width: 900px) {
+    .bhag-banner { grid-template-columns: 1fr; }
+    .milestone-bar { grid-template-columns: 1fr; }
+    .forecast-table, .totals-table { font-size: 0.72rem; }
+    .forecast-table th, .forecast-table td,
+    .totals-table th, .totals-table td { padding: 0.4rem 0.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="school">Collinsworth School of Performing Arts</div>
+      <div class="university">California Baptist University &nbsp;|&nbsp; Riverside, CA</div>
+    </div>
+    <a href="SoPA_Strategic_Plan_Website.html#pillar1" class="back-link">&#8592; Strategic Plan</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Pillar 1 — Enrollment Growth</div>
+    <h1>Enrollment Forecast by Division &amp; Degree</h1>
+    <p class="hero-sub">FA25–FA35 &nbsp;|&nbsp; Target: 500 Majors by 2035</p>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- Summary cards -->
+  <div class="bhag-banner">
+    <div class="bhag-card">
+      <div class="label">FA25 Baseline</div>
+      <div class="number">288</div>
+      <div class="sublabel">Total SoPA majors, Fall 2025</div>
+    </div>
+    <div class="bhag-card">
+      <div class="label">2035 BHAG Target</div>
+      <div class="number">500</div>
+      <div class="sublabel">Preeminence threshold</div>
+    </div>
+    <div class="bhag-card gap">
+      <div class="label">10-Year Growth Needed</div>
+      <div class="number">+216</div>
+      <div class="sublabel">+75% over the decade</div>
+    </div>
+  </div>
+
+  <!-- Chart -->
+  <div class="chart-section">
+    <div class="section-label">Ten-Year Trajectory</div>
+    <div class="section-title">Total SoPA Enrollment vs. BHAG Target</div>
+    <div class="chart-container">
+      <canvas id="enrollmentChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Milestone checkpoints -->
+  <div class="milestone-bar">
+    <div class="ms-box short">
+      <div class="ms-label">FA28 Checkpoint</div>
+      <div class="ms-num">381</div>
+      <div class="ms-sub">Early validation — growth strategies taking hold</div>
+    </div>
+    <div class="ms-box mid">
+      <div class="ms-label">FA30 Midpoint</div>
+      <div class="ms-num">429</div>
+      <div class="ms-sub">Mid-decade — course correction window</div>
+    </div>
+    <div class="ms-box long">
+      <div class="ms-label">FA35 Goal</div>
+      <div class="ms-num">504</div>
+      <div class="ms-sub">BHAG achieved — preeminence threshold reached</div>
+    </div>
+  </div>
+
+  <!-- Division tables -->
+
+  <!-- Performance and Pedagogy -->
+  <div class="division-block">
+    <div class="division-header">Performance and Pedagogy Division</div>
+    <table class="forecast-table">
+      <thead>
+        <tr>
+          <th>Program</th>
+          <th>FA25</th><th>FA26</th><th>FA27</th>
+          <th class="checkpoint">FA28</th>
+          <th>FA29</th>
+          <th class="checkpoint">FA30</th>
+          <th>FA31</th><th>FA32</th><th>FA33</th><th>FA34</th>
+          <th class="checkpoint">FA35</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>BA Music</td><td>27</td><td>28</td><td>29</td><td class="checkpoint">31</td><td>33</td><td class="checkpoint">35</td><td>37</td><td>39</td><td>41</td><td>43</td><td class="checkpoint">45</td></tr>
+        <tr><td>BM Composition for Stage and Screen</td><td>9</td><td>10</td><td>11</td><td class="checkpoint">12</td><td>13</td><td class="checkpoint">14</td><td>14</td><td>14</td><td>14</td><td>14</td><td class="checkpoint">14</td></tr>
+        <tr><td>BM Performance and Pedagogy</td><td>17</td><td>18</td><td>19</td><td class="checkpoint">20</td><td>21</td><td class="checkpoint">22</td><td>23</td><td>24</td><td>25</td><td>26</td><td class="checkpoint">27</td></tr>
+        <tr><td>MM Performance / Certificate (residential)</td><td>24</td><td>24</td><td>24</td><td class="checkpoint">24</td><td>24</td><td class="checkpoint">24</td><td>24</td><td>24</td><td>24</td><td>24</td><td class="checkpoint">24</td></tr>
+        <tr class="subtotal"><td>Subtotal: Performance and Pedagogy</td><td>77</td><td>80</td><td>83</td><td class="checkpoint">87</td><td>91</td><td class="checkpoint">95</td><td>98</td><td>101</td><td>104</td><td>107</td><td class="checkpoint">110</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Music Education -->
+  <div class="division-block">
+    <div class="division-header">Music Education Division</div>
+    <table class="forecast-table">
+      <thead>
+        <tr>
+          <th>Program</th>
+          <th>FA25</th><th>FA26</th><th>FA27</th>
+          <th class="checkpoint">FA28</th>
+          <th>FA29</th>
+          <th class="checkpoint">FA30</th>
+          <th>FA31</th><th>FA32</th><th>FA33</th><th>FA34</th>
+          <th class="checkpoint">FA35</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>BM Music Education</td><td>48</td><td>50</td><td>52</td><td class="checkpoint">54</td><td>56</td><td class="checkpoint">58</td><td>60</td><td>62</td><td>64</td><td>66</td><td class="checkpoint">68</td></tr>
+        <tr><td>MM Music Education (online/hybrid)</td><td>0</td><td>10</td><td>17</td><td class="checkpoint">21</td><td>24</td><td class="checkpoint">24</td><td>24</td><td>24</td><td>24</td><td>24</td><td class="checkpoint">24</td></tr>
+        <tr class="subtotal"><td>Subtotal: Music Education</td><td>48</td><td>60</td><td>69</td><td class="checkpoint">75</td><td>80</td><td class="checkpoint">82</td><td>84</td><td>86</td><td>88</td><td>90</td><td class="checkpoint">92</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Worship Arts -->
+  <div class="division-block">
+    <div class="division-header">Worship Arts Division</div>
+    <table class="forecast-table">
+      <thead>
+        <tr>
+          <th>Program</th>
+          <th>FA25</th><th>FA26</th><th>FA27</th>
+          <th class="checkpoint">FA28</th>
+          <th>FA29</th>
+          <th class="checkpoint">FA30</th>
+          <th>FA31</th><th>FA32</th><th>FA33</th><th>FA34</th>
+          <th class="checkpoint">FA35</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>BA Music for Worship Arts and Ministry</td><td>23</td><td>24</td><td>25</td><td class="checkpoint">26</td><td>27</td><td class="checkpoint">28</td><td>29</td><td>30</td><td>31</td><td>32</td><td class="checkpoint">34</td></tr>
+        <tr><td>MA Worship Arts (online/hybrid)</td><td>22</td><td>23</td><td>24</td><td class="checkpoint">24</td><td>24</td><td class="checkpoint">24</td><td>24</td><td>24</td><td>24</td><td>24</td><td class="checkpoint">24</td></tr>
+        <tr><td>Doctor of Worship Arts (online/hybrid)</td><td>0</td><td>0</td><td>10</td><td class="checkpoint">18</td><td>24</td><td class="checkpoint">24</td><td>24</td><td>24</td><td>24</td><td>24</td><td class="checkpoint">24</td></tr>
+        <tr class="subtotal"><td>Subtotal: Worship Arts</td><td>45</td><td>47</td><td>59</td><td class="checkpoint">68</td><td>75</td><td class="checkpoint">76</td><td>77</td><td>78</td><td>79</td><td>80</td><td class="checkpoint">82</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Commercial Music -->
+  <div class="division-block">
+    <div class="division-header">Commercial Music and Production Division</div>
+    <table class="forecast-table">
+      <thead>
+        <tr>
+          <th>Program</th>
+          <th>FA25</th><th>FA26</th><th>FA27</th>
+          <th class="checkpoint">FA28</th>
+          <th>FA29</th>
+          <th class="checkpoint">FA30</th>
+          <th>FA31</th><th>FA32</th><th>FA33</th><th>FA34</th>
+          <th class="checkpoint">FA35</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>BM Commercial Performance</td><td>15</td><td>18</td><td>22</td><td class="checkpoint">26</td><td>29</td><td class="checkpoint">32</td><td>35</td><td>38</td><td>41</td><td>44</td><td class="checkpoint">47</td></tr>
+        <tr class="teachout"><td>BM Songwriting (teach-out)</td><td>12</td><td>8</td><td>0</td><td class="checkpoint">0</td><td>0</td><td class="checkpoint">0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class="checkpoint">0</td></tr>
+        <tr><td>BS Production Design &amp; Technology</td><td>43</td><td>47</td><td>51</td><td class="checkpoint">54</td><td>57</td><td class="checkpoint">60</td><td>63</td><td>65</td><td>67</td><td>69</td><td class="checkpoint">71</td></tr>
+        <tr><td>BS Entertainment Industry Studies <em style="font-size:0.75em;color:var(--gold);">(NEW FA27)</em></td><td>0</td><td>0</td><td>10</td><td class="checkpoint">17</td><td>22</td><td class="checkpoint">26</td><td>29</td><td>31</td><td>33</td><td>35</td><td class="checkpoint">37</td></tr>
+        <tr class="subtotal"><td>Subtotal: Commercial Music and Production</td><td>70</td><td>73</td><td>83</td><td class="checkpoint">97</td><td>108</td><td class="checkpoint">118</td><td>127</td><td>134</td><td>141</td><td>148</td><td class="checkpoint">155</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Theatre Arts -->
+  <div class="division-block">
+    <div class="division-header">Theatre Arts Division</div>
+    <table class="forecast-table">
+      <thead>
+        <tr>
+          <th>Program</th>
+          <th>FA25</th><th>FA26</th><th>FA27</th>
+          <th class="checkpoint">FA28</th>
+          <th>FA29</th>
+          <th class="checkpoint">FA30</th>
+          <th>FA31</th><th>FA32</th><th>FA33</th><th>FA34</th>
+          <th class="checkpoint">FA35</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>BA Theatre</td><td>48</td><td>50</td><td>52</td><td class="checkpoint">54</td><td>56</td><td class="checkpoint">58</td><td>60</td><td>62</td><td>63</td><td>64</td><td class="checkpoint">65</td></tr>
+        <tr class="subtotal"><td>Subtotal: Theatre Arts</td><td>48</td><td>50</td><td>52</td><td class="checkpoint">54</td><td>56</td><td class="checkpoint">58</td><td>60</td><td>62</td><td>63</td><td>64</td><td class="checkpoint">65</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Grand Totals -->
+  <div class="totals-block">
+    <div class="section-label">Summary</div>
+    <div class="section-title">Total SoPA Enrollment</div>
+    <table class="totals-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>FA25</th><th>FA26</th><th>FA27</th>
+          <th class="checkpoint">FA28</th>
+          <th>FA29</th>
+          <th class="checkpoint">FA30</th>
+          <th>FA31</th><th>FA32</th><th>FA33</th><th>FA34</th>
+          <th class="checkpoint">FA35</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="total-row"><td>Total SoPA Enrollment</td><td>288</td><td>310</td><td>346</td><td class="checkpoint">381</td><td>410</td><td class="checkpoint">429</td><td>446</td><td>461</td><td>475</td><td>489</td><td class="checkpoint">504</td></tr>
+        <tr class="bhag-row"><td>BHAG Target</td><td>500</td><td>500</td><td>500</td><td class="checkpoint">500</td><td>500</td><td class="checkpoint">500</td><td>500</td><td>500</td><td>500</td><td>500</td><td class="checkpoint">500</td></tr>
+        <tr class="gap-row"><td>Gap to Target</td><td>212</td><td>190</td><td>154</td><td class="checkpoint">119</td><td>90</td><td class="checkpoint">71</td><td>54</td><td>39</td><td>25</td><td>11</td><td class="checkpoint achieved">Goal met</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Growth assumptions -->
+  <div>
+    <div class="section-label">Methodology</div>
+    <div class="section-title">Growth Assumptions by Program</div>
+    <table class="notes-table">
+      <thead>
+        <tr><th>Program</th><th>FA25 Actual</th><th>Growth Assumption</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>BA Music</td><td>27</td><td>Double-major growth with Business; conservative ramp, accelerating after FA28</td></tr>
+        <tr><td>BM Composition for Stage and Screen</td><td>9</td><td>Niche program; plateaus at 14</td></tr>
+        <tr><td>BM Performance and Pedagogy</td><td>17</td><td>Combined from Instr/Piano/Vocal in FA26; steady +1/yr</td></tr>
+        <tr><td>MM Performance / Certificate (residential)</td><td>24</td><td>Flat; capacity-limited</td></tr>
+        <tr><td>BM Music Education</td><td>48</td><td>Strong demand; consistent +2/yr growth sustained through FA35</td></tr>
+        <tr><td>MM Music Education (online/hybrid)</td><td>0</td><td>Launches FA26; rapid ramp to steady state of ~24</td></tr>
+        <tr><td>BA Music for Worship Arts and Ministry</td><td>23</td><td>Steady growth; repositioned career outcomes</td></tr>
+        <tr><td>MA Worship Arts (online/hybrid)</td><td>22</td><td>Steady state ~24</td></tr>
+        <tr><td>Doctor of Worship Arts (online/hybrid)</td><td>0</td><td>Launches FA27; capped at 24 students</td></tr>
+        <tr><td>BM Commercial Performance</td><td>15</td><td>Absorbs Songwriting in FA27; strong growth via Commercial Performance concentration</td></tr>
+        <tr><td>BM Songwriting (teach-out)</td><td>12</td><td>Folds into Commercial Performance FA27; teach-out FA26–27</td></tr>
+        <tr><td>BS Production Design &amp; Technology</td><td>43</td><td>Replaces BM Studio Production; growth moderates as facilities reach capacity</td></tr>
+        <tr><td>BS Entertainment Industry Studies</td><td>0</td><td>NEW: Launches FA27; joint with School of Business; conservative ramp</td></tr>
+        <tr><td>BA Theatre</td><td>48</td><td>Growing; facility replacement needed; growth slows in later years</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <span>Collinsworth School of Performing Arts</span> &nbsp;|&nbsp; California Baptist University &nbsp;|&nbsp; SoPA 2025–2035 Strategic Plan
+</footer>
+
+<script>
+const years = ['FA25','FA26','FA27','FA28','FA29','FA30','FA31','FA32','FA33','FA34','FA35'];
+const total = [288, 310, 346, 381, 410, 429, 446, 461, 475, 489, 504];
+const bhag  = [500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500];
+const byDiv = {
+  'Performance & Pedagogy': [77, 80, 83, 87, 91, 95, 98, 101, 104, 107, 110],
+  'Music Education':        [48, 60, 69, 75, 80, 82, 84,  86,  88,  90,  92],
+  'Worship Arts':           [45, 47, 59, 68, 75, 76, 77,  78,  79,  80,  82],
+  'Commercial Music & Prod':[70, 73, 83, 97,108,118,127, 134, 141, 148, 155],
+  'Theatre Arts':           [48, 50, 52, 54, 56, 58, 60,  62,  63,  64,  65],
+};
+const divColors = ['#1B3A6B','#2a5298','#C9A84C','#3b82f6','#6b7280'];
+
+const ctx = document.getElementById('enrollmentChart').getContext('2d');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: years,
+    datasets: [
+      {
+        label: 'BHAG Target (500)',
+        data: bhag,
+        borderColor: '#C9A84C',
+        borderDash: [8,4],
+        borderWidth: 2,
+        pointRadius: 0,
+        fill: false,
+        tension: 0,
+      },
+      {
+        label: 'Total SoPA Enrollment',
+        data: total,
+        borderColor: '#1B3A6B',
+        backgroundColor: 'rgba(27,58,107,0.12)',
+        borderWidth: 3,
+        pointBackgroundColor: '#1B3A6B',
+        pointRadius: 5,
+        fill: true,
+        tension: 0.3,
+      },
+      ...Object.entries(byDiv).map(([label, data], i) => ({
+        label,
+        data,
+        borderColor: divColors[i],
+        borderWidth: 1.5,
+        borderDash: [3,3],
+        pointRadius: 2,
+        fill: false,
+        tension: 0.3,
+      }))
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: { font: { size: 11 }, padding: 14, usePointStyle: true }
+      },
+      tooltip: {
+        callbacks: {
+          label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y}`
+        }
+      }
+    },
+    scales: {
+      y: {
+        min: 0, max: 550,
+        ticks: { stepSize: 50, font: { size: 11 } },
+        grid: { color: 'rgba(0,0,0,0.06)' }
+      },
+      x: {
+        ticks: { font: { size: 11 } },
+        grid: { display: false }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

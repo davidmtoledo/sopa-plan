@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pillar 3: Institutional Representation | SoPA 2025–2035 Strategic Plan</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 18px; }
+  body { font-family: 'Georgia', serif; color: #1a1a1a; background: #fff; line-height: 1.7; }
+  :root { --navy:#1B3A6B; --gold:#C9A84C; --cream:#F8F5EE; --gray:#6b7280; --light-gray:#f3f4f6; --border:#e5e7eb; }
+
+  .site-header { background:var(--navy); position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(0,0,0,.3); }
+  .header-inner { max-width:1100px; margin:0 auto; padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:64px; gap:1rem; }
+  .header-brand .school { color:#fff; font-size:.95rem; font-weight:bold; }
+  .header-brand .university { color:var(--gold); font-size:.75rem; letter-spacing:.05em; text-transform:uppercase; }
+  .back-link { color:rgba(255,255,255,.75); font-size:.8rem; text-decoration:none; border:1px solid rgba(255,255,255,.3); padding:.35rem .85rem; border-radius:4px; white-space:nowrap; transition:background .2s; }
+  .back-link:hover { background:rgba(255,255,255,.1); color:#fff; }
+
+  .hero { background:linear-gradient(135deg,#0f2344 0%,#1B3A6B 55%,#2a5298 100%); color:#fff; padding:3rem 2rem 2.5rem; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(201,168,76,.04) 40px,rgba(201,168,76,.04) 80px); }
+  .hero-inner { max-width:1100px; margin:0 auto; position:relative; }
+  .hero-eyebrow { font-size:.75rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:.6rem; }
+  .hero h1 { font-size:2.2rem; font-weight:normal; margin-bottom:.6rem; }
+  .hero-sub { font-size:1rem; color:rgba(255,255,255,.78); font-style:italic; max-width:700px; }
+
+  .main { max-width:1100px; margin:0 auto; padding:2.5rem 2rem 4rem; }
+
+  .pillar-statement { background:var(--cream); border-left:4px solid var(--gold); padding:1rem 1.25rem; margin-bottom:2rem; font-style:italic; color:#333; border-radius:0 4px 4px 0; font-size:.95rem; line-height:1.75; }
+
+  .goals-strip { display:flex; flex-direction:column; gap:.5rem; margin-bottom:2rem; }
+  .goals-strip-label { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gray); margin-bottom:.25rem; }
+  .goal-chip-row { display:flex; align-items:flex-start; gap:.75rem; padding:.6rem .9rem; border:1px solid var(--border); border-radius:6px; background:#fafafa; font-size:.86rem; line-height:1.4; }
+  .goal-chip-num { background:var(--navy); color:var(--gold); font-weight:bold; font-size:.75rem; padding:.15rem .45rem; border-radius:3px; white-space:nowrap; flex-shrink:0; margin-top:.1rem; }
+  .goal-chip-text { color:var(--navy); font-weight:bold; }
+  .goal-detail-num { background:var(--navy); color:var(--gold); font-size:.75rem; font-weight:bold; padding:.15rem .5rem; border-radius:3px; white-space:nowrap; flex-shrink:0; }
+
+  .section-label { font-size:.68rem; letter-spacing:.13em; text-transform:uppercase; color:var(--gold); margin-bottom:.4rem; }
+  .section-title { font-size:1.5rem; color:var(--navy); font-weight:normal; margin-bottom:1.5rem; border-bottom:2px solid var(--gold); padding-bottom:.5rem; }
+
+  .goal-detail { margin-bottom:1.75rem; padding-bottom:1.75rem; border-bottom:1px dashed var(--border); }
+  .goal-detail:last-of-type { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+  .goal-detail-header { display:flex; align-items:baseline; gap:.75rem; margin-bottom:.6rem; }
+  .goal-detail-title { font-size:1rem; font-weight:bold; color:var(--navy); }
+  .goal-detail p { font-size:.9rem; margin-bottom:.5rem; }
+  .goal-detail ul { margin:0 0 1rem 1.1rem; font-size:.9rem; }
+  .goal-detail ul li { margin-bottom:.3rem; }
+
+  .dim-header { font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); font-weight:bold; border-bottom:1px solid var(--border); padding-bottom:.4rem; margin:1.75rem 0 1rem; }
+
+  .milestone-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:2.5rem; }
+  .milestone-box { padding:1.1rem; border-radius:6px; font-size:.83rem; }
+  .milestone-box.short { background:#e8f0fb; border-top:4px solid #3b82f6; }
+  .milestone-box.mid   { background:#fef3c7; border-top:4px solid #f59e0b; }
+  .milestone-box.long  { background:#d1fae5; border-top:4px solid #10b981; }
+  .milestone-box .mbox-label { font-weight:bold; color:var(--navy); font-size:.8rem; margin-bottom:.5rem; }
+  .milestone-box ul { margin-left:1rem; }
+  .milestone-box ul li { margin-bottom:.25rem; }
+
+  .site-footer { background:var(--navy); color:rgba(255,255,255,.6); padding:2rem; font-size:.8rem; text-align:center; }
+  .site-footer span { color:var(--gold); }
+
+  @media (max-width:900px) {
+    .milestone-grid { grid-template-columns:1fr; }
+    .hero h1 { font-size:1.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="school">Collinsworth School of Performing Arts</div>
+      <div class="university">California Baptist University &nbsp;|&nbsp; Riverside, CA</div>
+    </div>
+    <a href="SoPA_Strategic_Plan_Website.html#pillar3" class="back-link">&#8592; Strategic Plan</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Strategic Plan 2025–2035 &nbsp;|&nbsp; Pillar 3</div>
+    <h1>Institutional Representation</h1>
+    <p class="hero-sub">Leverage every performance, competition, and public engagement to put CBU in front of new audiences and build the institution's reputation.</p>
+  </div>
+</div>
+
+<div class="main">
+  <div class="section-label">Pillar 3 Goals &amp; Objectives</div>
+  <div class="section-title">Full Goal Breakdown</div>
+<div class="pillar-statement">The Collinsworth School serves as a primary public face of California Baptist University, representing the institution's mission and values through exceptional artistic performances, strategic community engagement, and an expanding national presence. Like collegiate athletics, the school generates outsized institutional value — drawing tens of thousands of community members to campus annually, building brand equity, deepening denominational relationships, and creating a recruitment pipeline that extends CBU's reach far beyond the classroom.</div>
+<div class="goals-strip">
+<div class="goals-strip-label">Goals at a Glance</div>
+<div class="goal-chip-row"><span class="goal-detail-num">3.1</span><span class="goal-chip-text">Maximize the School's Role as CBU's Cultural Front Door</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">3.2</span><span class="goal-chip-text">Compete and Perform on the National Stage</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">3.3</span><span class="goal-chip-text">Lead the Conversation in Christian Higher Education and Worship Arts</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">3.4</span><span class="goal-chip-text">Build and Celebrate the SoPA Alumni Community</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">3.5</span><span class="goal-chip-text">Tell Our Story — Build a National Brand</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">3.6</span><span class="goal-chip-text">Demonstrate SoPA's Institutional Value to CBU Leadership</span></div>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">3.1</span>
+<span class="goal-detail-title">Maximize the School's Role as CBU's Cultural Front Door</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">The Collinsworth School already draws over 15,000 attendees to CBU Christmas alone and produces more than 250 events annually. This goal builds on that foundation by scaling audience reach, developing signature events across every division, and ensuring each public moment is an opportunity to introduce people to CBU.</p>
+<ul>
+<li>Grow total annual audience attendance across all events to 50,000+ by 2030 and 75,000+ by 2035</li>
+<li>Elevate CBU Christmas as the school's flagship event — pursue a national broadcast through a global platform (streaming service, Christian media network, or major social platform)</li>
+<li>Develop a signature event for each academic division by Year 3–5, creating multiple annual moments of high visibility</li>
+<li>Develop the Academy of the Arts — a pre-college program that brings high school students onto campus for ensemble involvement, with an Apprenticeship Honors Program for advanced participants</li>
+<li>Ensure every public-facing event includes intentional touchpoints for prospective students, donors, and community partners</li>
+</ul>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">3.2</span>
+<span class="goal-detail-title">Compete and Perform on the National Stage</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">Premier programs don't just train students — they send them into the arena. Before the Collinsworth School can compete consistently at the highest levels, it must develop a deliberate strategy for where and who.</p>
+<ul>
+<li>Develop a Competition and Representation Strategy for each division — identifying the 3–5 most strategically important competitions, conferences, and festivals, with phased targets: exploratory entries in Years 1–2, consistent representation in Years 3–5, competitive excellence in Years 6–10</li>
+<li>Build internal preparation pipelines, including mock competitions, guest adjudicator visits, and faculty mentorship dedicated to competition preparation</li>
+<li>Commission works by celebrated composers for major ensembles, securing world or American premieres</li>
+<li>Develop a touring strategy for select ensembles, targeting churches, conferences, and peer institutions nationally</li>
+</ul>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">3.3</span>
+<span class="goal-detail-title">Lead the Conversation in Christian Higher Education and Worship Arts</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">The vision calls for the Collinsworth School to be at the forefront of the global conversation about performing arts in culture. That requires the school not just to participate — but to convene.</p>
+<ul>
+<li>Launch a Leadership Summit for CCCU Arts Deans — positioning the Collinsworth School as the intellectual and professional hub for performing arts leadership in Christian higher education, hosted annually or biennially at CBU (target: Year 2–3)</li>
+<li>Develop Worship West — a Worship Leadership Roundtable hosted annually by the Worship Arts division, convening worship pastors, industry leaders, and academics for training, networking, and thought leadership (target: Year 1–2)</li>
+<li>Send student and faculty teams to denominational events (SBC Annual Meeting, state conventions, Pastors' Conference, LifeWay events) as performers and presenters</li>
+<li>Develop a church partnership program creating a pipeline for recruitment, internship placement, and post-graduation employment</li>
+</ul>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">3.4</span>
+<span class="goal-detail-title">Build and Celebrate the SoPA Alumni Community</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">Alumni are the school's most powerful proof of mission — living evidence of "impacting the world through careers in the performing arts."</p>
+<ul>
+<li>Launch the SoPA Alumni Connection Initiative — build an active, engaged alumni community to 1,000 connected members within the 10-year plan</li>
+<li>Develop SoPA Alumni Highlight Recognitions — identify and tell the stories of the Top 100 Alumni who exemplify the school's mission</li>
+<li>Establish the Distinguished Alumni Society ("Red Coat Cardinals") — a prestigious recognition inducting 3–5 members annually with formal awards at a Homecoming alumni gathering</li>
+<li>Create alumni ambassador roles supporting recruitment, mentorship of current students, and donor engagement</li>
+</ul>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">3.5</span>
+<span class="goal-detail-title">Tell Our Story — Build a National Brand</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">The Collinsworth School is an undiscovered gem. The quality is there, but the story isn't reaching enough people consistently. This goal moves the school from sporadic breakout moments to sustained, strategic national visibility.</p>
+<ul>
+<li>Launch the "Tell Our Story" Marketing Initiative — an ongoing campaign of professional-quality video content, social media presence, student and faculty spotlights, and behind-the-scenes storytelling</li>
+<li>Pursue a national broadcast of CBU Christmas through a global platform — target 100K+ streaming views by Year 5, 500K+ by Year 10</li>
+<li>Develop a brand narrative and messaging toolkit specific to the Collinsworth School</li>
+<li>Build YouTube and social media channels into significant audience platforms (target: 50+ video content pieces per year by Year 3)</li>
+<li>Secure regular coverage in Christian higher education media, performing arts publications, and SBC-affiliated outlets</li>
+</ul>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">3.6</span>
+<span class="goal-detail-title">Demonstrate SoPA's Institutional Value to CBU Leadership</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">The performing arts generate institutional value that transcends the balance sheet. CBU leadership must understand and champion this value consistently.</p>
+<ul>
+<li>Develop an annual Institutional Impact Report quantifying the school's value: audience numbers, media impressions, recruitment pipeline contribution, donor engagement, community goodwill, national visibility milestones</li>
+<li>Frame the school's budget as an institutional investment with measurable ROI in brand, enrollment, and community engagement</li>
+<li>Present the impact report annually to the Provost, President's Cabinet, and Board of Trustees</li>
+</ul>
+</div>
+<div class="milestone-grid">
+<div class="milestone-box short">
+<div class="mbox-label">Years 1–3: Foundation</div>
+<ul>
+<li>Competition and Representation Strategy completed for each division</li>
+<li>"Tell Our Story" initiative launches</li>
+<li>Academy of the Arts with Apprenticeship Honors Program launched</li>
+<li>Inaugural CCCU Arts Deans Summit and Worship West hosted</li>
+<li>First annual Institutional Impact Report presented to CBU leadership</li>
+</ul>
+</div>
+<div class="milestone-box mid">
+<div class="mbox-label">Years 4–7: Expansion</div>
+<ul>
+<li>Total annual audience reaches 50,000+</li>
+<li>All four division signature events operational</li>
+<li>Students and ensembles consistently represented nationally</li>
+<li>CBU Christmas national broadcast launches</li>
+<li>Alumni community reaches 500 connected members</li>
+</ul>
+</div>
+<div class="milestone-box long">
+<div class="mbox-label">Years 8–10: Preeminence</div>
+<ul>
+<li>Widely recognized as the premier CCCU performing arts program</li>
+<li>CBU Christmas broadcast at 500K+ views</li>
+<li>Alumni community exceeds 1,000</li>
+</ul>
+</div>
+</div>
+</div>
+
+<footer class="site-footer">
+  <span>Collinsworth School of Performing Arts</span> &nbsp;|&nbsp; California Baptist University &nbsp;|&nbsp; SoPA 2025–2035 Strategic Plan
+</footer>
+</body>
+</html>

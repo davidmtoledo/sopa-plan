@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pillar 4: Transformative Culture | SoPA 2025–2035 Strategic Plan</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 18px; }
+  body { font-family: 'Georgia', serif; color: #1a1a1a; background: #fff; line-height: 1.7; }
+  :root { --navy:#1B3A6B; --gold:#C9A84C; --cream:#F8F5EE; --gray:#6b7280; --light-gray:#f3f4f6; --border:#e5e7eb; }
+
+  .site-header { background:var(--navy); position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(0,0,0,.3); }
+  .header-inner { max-width:1100px; margin:0 auto; padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:64px; gap:1rem; }
+  .header-brand .school { color:#fff; font-size:.95rem; font-weight:bold; }
+  .header-brand .university { color:var(--gold); font-size:.75rem; letter-spacing:.05em; text-transform:uppercase; }
+  .back-link { color:rgba(255,255,255,.75); font-size:.8rem; text-decoration:none; border:1px solid rgba(255,255,255,.3); padding:.35rem .85rem; border-radius:4px; white-space:nowrap; transition:background .2s; }
+  .back-link:hover { background:rgba(255,255,255,.1); color:#fff; }
+
+  .hero { background:linear-gradient(135deg,#0f2344 0%,#1B3A6B 55%,#2a5298 100%); color:#fff; padding:3rem 2rem 2.5rem; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(201,168,76,.04) 40px,rgba(201,168,76,.04) 80px); }
+  .hero-inner { max-width:1100px; margin:0 auto; position:relative; }
+  .hero-eyebrow { font-size:.75rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:.6rem; }
+  .hero h1 { font-size:2.2rem; font-weight:normal; margin-bottom:.6rem; }
+  .hero-sub { font-size:1rem; color:rgba(255,255,255,.78); font-style:italic; max-width:700px; }
+
+  .main { max-width:1100px; margin:0 auto; padding:2.5rem 2rem 4rem; }
+
+  .pillar-statement { background:var(--cream); border-left:4px solid var(--gold); padding:1rem 1.25rem; margin-bottom:2rem; font-style:italic; color:#333; border-radius:0 4px 4px 0; font-size:.95rem; line-height:1.75; }
+
+  .goals-strip { display:flex; flex-direction:column; gap:.5rem; margin-bottom:2rem; }
+  .goals-strip-label { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gray); margin-bottom:.25rem; }
+  .goal-chip-row { display:flex; align-items:flex-start; gap:.75rem; padding:.6rem .9rem; border:1px solid var(--border); border-radius:6px; background:#fafafa; font-size:.86rem; line-height:1.4; }
+  .goal-chip-num { background:var(--navy); color:var(--gold); font-weight:bold; font-size:.75rem; padding:.15rem .45rem; border-radius:3px; white-space:nowrap; flex-shrink:0; margin-top:.1rem; }
+  .goal-chip-text { color:var(--navy); font-weight:bold; }
+  .goal-detail-num { background:var(--navy); color:var(--gold); font-size:.75rem; font-weight:bold; padding:.15rem .5rem; border-radius:3px; white-space:nowrap; flex-shrink:0; }
+
+  .section-label { font-size:.68rem; letter-spacing:.13em; text-transform:uppercase; color:var(--gold); margin-bottom:.4rem; }
+  .section-title { font-size:1.5rem; color:var(--navy); font-weight:normal; margin-bottom:1.5rem; border-bottom:2px solid var(--gold); padding-bottom:.5rem; }
+
+  .goal-detail { margin-bottom:1.75rem; padding-bottom:1.75rem; border-bottom:1px dashed var(--border); }
+  .goal-detail:last-of-type { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+  .goal-detail-header { display:flex; align-items:baseline; gap:.75rem; margin-bottom:.6rem; }
+  .goal-detail-title { font-size:1rem; font-weight:bold; color:var(--navy); }
+  .goal-detail p { font-size:.9rem; margin-bottom:.5rem; }
+  .goal-detail ul { margin:0 0 1rem 1.1rem; font-size:.9rem; }
+  .goal-detail ul li { margin-bottom:.3rem; }
+
+  .dim-header { font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); font-weight:bold; border-bottom:1px solid var(--border); padding-bottom:.4rem; margin:1.75rem 0 1rem; }
+
+  .milestone-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:2.5rem; }
+  .milestone-box { padding:1.1rem; border-radius:6px; font-size:.83rem; }
+  .milestone-box.short { background:#e8f0fb; border-top:4px solid #3b82f6; }
+  .milestone-box.mid   { background:#fef3c7; border-top:4px solid #f59e0b; }
+  .milestone-box.long  { background:#d1fae5; border-top:4px solid #10b981; }
+  .milestone-box .mbox-label { font-weight:bold; color:var(--navy); font-size:.8rem; margin-bottom:.5rem; }
+  .milestone-box ul { margin-left:1rem; }
+  .milestone-box ul li { margin-bottom:.25rem; }
+
+  .site-footer { background:var(--navy); color:rgba(255,255,255,.6); padding:2rem; font-size:.8rem; text-align:center; }
+  .site-footer span { color:var(--gold); }
+
+  @media (max-width:900px) {
+    .milestone-grid { grid-template-columns:1fr; }
+    .hero h1 { font-size:1.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="school">Collinsworth School of Performing Arts</div>
+      <div class="university">California Baptist University &nbsp;|&nbsp; Riverside, CA</div>
+    </div>
+    <a href="SoPA_Strategic_Plan_Website.html#pillar4" class="back-link">&#8592; Strategic Plan</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Strategic Plan 2025–2035 &nbsp;|&nbsp; Pillar 4</div>
+    <h1>Transformative Culture</h1>
+    <p class="hero-sub">Form artists intentionally by cultivating spiritual depth, personal character, professional discipline, and artistic craft.</p>
+  </div>
+</div>
+
+<div class="main">
+  <div class="section-label">Pillar 4 Goals &amp; Objectives</div>
+  <div class="section-title">Full Goal Breakdown</div>
+<div class="pillar-statement">Transformative Culture is the Collinsworth School's commitment to intentional formation, shaping not only what students can do, but who they are becoming. SoPA believes that performing artists are shaped not only by technical training but by the full integration of spiritual depth, personal character, professional discipline, and artistic craft. That formation does not happen by accident. It requires intentional design, consistent investment, and a culture where every member of the community — faculty, staff, and students alike — is actively growing.</div>
+<div class="goals-strip">
+<div class="goals-strip-label">Goals at a Glance</div>
+<div class="goal-chip-row"><span class="goal-detail-num">4.1</span><span class="goal-chip-text">Establish SoPA as a Community of Intentional Spiritual Formation</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">4.2</span><span class="goal-chip-text">Build a Healthy, Connected SoPA Community</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">4.3</span><span class="goal-chip-text">Develop the Professional Capacity of Faculty, Staff, and Students</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">4.4</span><span class="goal-chip-text">Sustain a Culture of Active Artistic Practice Across the SoPA Community</span></div>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">4.1</span>
+<span class="goal-detail-title">Establish SoPA as a Community of Intentional Spiritual Formation</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">SoPA will develop and sustain a distinctive spiritual formation culture — for faculty, staff, and students — that is organic, cross-denominational, and rooted in the school's artistic identity.</p>
+<ul>
+<li>Launch faculty small groups or equivalent organic spiritual community structures within the first two years</li>
+<li>Develop at least two recurring structured opportunities per year for spiritual reflection connected to major artistic events (productions, recital seasons, etc.)</li>
+<li>Integrate explicit spiritual formation touchpoints into student divisional programming across all four divisions</li>
+<li>Establish a culture where the Dean's spiritual leadership is reinforced at the faculty, staff, and divisional levels</li>
+<li>Year 5 target: 70% of faculty and staff report a sense of spiritual community within SoPA in annual culture survey</li>
+</ul>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">4.2</span>
+<span class="goal-detail-title">Build a Healthy, Connected SoPA Community</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">SoPA will create the structural conditions for genuine faculty, staff, and student community — moving beyond professional proximity toward real belonging, mutual care, and cross-divisional relationships.</p>
+<ul>
+<li>Establish the SoPA Faculty and Staff Community Rhythm with four protected touchpoints per year, calendared before the start of each academic year</li>
+<li>Designate ownership of the faculty and staff community function to a specific role or committee</li>
+<li>Expand and systematize the Student Mentorship Program across all four divisions</li>
+<li>Develop and sustain division-specific connection activities tailored to each community's culture</li>
+<li>Year 5 target: 80% of faculty and staff report feeling genuinely connected to SoPA colleagues across divisions</li>
+</ul>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">4.3</span>
+<span class="goal-detail-title">Develop the Professional Capacity of Faculty, Staff, and Students</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">SoPA will invest deliberately in the professional and leadership development of its people — creating pathways for faculty to grow as leaders and pedagogues, and for students to develop the professional identity and skills required for sustained careers in the performing arts.</p>
+<ul>
+<li>Design and implement a Leadership Development Program for high-potential internal faculty within the first three years</li>
+<li>Establish regular pedagogical training and professional development opportunities available to all faculty</li>
+<li>Create a faculty and staff recognition culture including awards and public affirmation of excellence</li>
+<li>Launch and refine the SoPA Freshman Introduction Course as a foundational professional formation experience</li>
+<li>Develop and grow the SoPA Honors Program as a high-achievement pathway</li>
+</ul>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">4.4</span>
+<span class="goal-detail-title">Sustain a Culture of Active Artistic Practice Across the SoPA Community</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">SoPA will cultivate a school-wide expectation that every member of the community — faculty, staff, and students — remains a growing, practicing artist.</p>
+<ul>
+<li>Establish the practitioner-model norm for faculty through culture-building language, leadership modeling, and logistical support for faculty performances</li>
+<li>Leverage the existing Faculty Showcase as a consistent, visible platform for faculty artistic activity</li>
+<li>Implement the Recital Requirement for all SoPA majors as a curricular milestone</li>
+<li>Expand external performance opportunities for students including competitions, professional associations, and community engagement</li>
+<li>Year 5 target: 80% of full-time faculty have performed publicly within the SoPA context within the past two years</li>
+</ul>
+</div>
+<div class="milestone-grid">
+<div class="milestone-box short">
+<div class="mbox-label">Years 1–3: Foundation</div>
+<ul>
+<li>Faculty small groups and spiritual community structures launched</li>
+<li>Student Mentorship Program systematized across all divisions</li>
+<li>Leadership Development Program for high-potential faculty designed and launched</li>
+<li>SoPA Freshman Introduction Course and Honors Program initiated</li>
+<li>Faculty and Staff Community Rhythm calendared with four protected touchpoints per year</li>
+</ul>
+</div>
+<div class="milestone-box mid">
+<div class="mbox-label">Years 4–7: Expansion</div>
+<ul>
+<li>70% of faculty and staff report a sense of spiritual community within SoPA</li>
+<li>80% of faculty and staff report feeling genuinely connected across divisions</li>
+<li>Recital Requirement fully implemented across all SoPA majors</li>
+<li>Faculty Showcase established as an annual flagship event for artistic practice</li>
+</ul>
+</div>
+<div class="milestone-box long">
+<div class="mbox-label">Years 8–10: Preeminence</div>
+<ul>
+<li>SoPA recognized as a model of Christian community in performing arts higher education</li>
+<li>80% of full-time faculty performing publicly within the SoPA context in the past two years</li>
+<li>Culture survey scores consistently above 80% across all formation dimensions</li>
+</ul>
+</div>
+</div>
+</div>
+
+<footer class="site-footer">
+  <span>Collinsworth School of Performing Arts</span> &nbsp;|&nbsp; California Baptist University &nbsp;|&nbsp; SoPA 2025–2035 Strategic Plan
+</footer>
+</body>
+</html>

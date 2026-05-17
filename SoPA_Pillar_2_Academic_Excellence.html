@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pillar 2: Academic Excellence | SoPA 2025–2035 Strategic Plan</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 18px; }
+  body { font-family: 'Georgia', serif; color: #1a1a1a; background: #fff; line-height: 1.7; }
+  :root { --navy:#1B3A6B; --gold:#C9A84C; --cream:#F8F5EE; --gray:#6b7280; --light-gray:#f3f4f6; --border:#e5e7eb; }
+
+  .site-header { background:var(--navy); position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(0,0,0,.3); }
+  .header-inner { max-width:1100px; margin:0 auto; padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:64px; gap:1rem; }
+  .header-brand .school { color:#fff; font-size:.95rem; font-weight:bold; }
+  .header-brand .university { color:var(--gold); font-size:.75rem; letter-spacing:.05em; text-transform:uppercase; }
+  .back-link { color:rgba(255,255,255,.75); font-size:.8rem; text-decoration:none; border:1px solid rgba(255,255,255,.3); padding:.35rem .85rem; border-radius:4px; white-space:nowrap; transition:background .2s; }
+  .back-link:hover { background:rgba(255,255,255,.1); color:#fff; }
+
+  .hero { background:linear-gradient(135deg,#0f2344 0%,#1B3A6B 55%,#2a5298 100%); color:#fff; padding:3rem 2rem 2.5rem; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(201,168,76,.04) 40px,rgba(201,168,76,.04) 80px); }
+  .hero-inner { max-width:1100px; margin:0 auto; position:relative; }
+  .hero-eyebrow { font-size:.75rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:.6rem; }
+  .hero h1 { font-size:2.2rem; font-weight:normal; margin-bottom:.6rem; }
+  .hero-sub { font-size:1rem; color:rgba(255,255,255,.78); font-style:italic; max-width:700px; }
+
+  .main { max-width:1100px; margin:0 auto; padding:2.5rem 2rem 4rem; }
+
+  .pillar-statement { background:var(--cream); border-left:4px solid var(--gold); padding:1rem 1.25rem; margin-bottom:2rem; font-style:italic; color:#333; border-radius:0 4px 4px 0; font-size:.95rem; line-height:1.75; }
+
+  .goals-strip { display:flex; flex-direction:column; gap:.5rem; margin-bottom:2rem; }
+  .goals-strip-label { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gray); margin-bottom:.25rem; }
+  .goal-chip-row { display:flex; align-items:flex-start; gap:.75rem; padding:.6rem .9rem; border:1px solid var(--border); border-radius:6px; background:#fafafa; font-size:.86rem; line-height:1.4; }
+  .goal-chip-num { background:var(--navy); color:var(--gold); font-weight:bold; font-size:.75rem; padding:.15rem .45rem; border-radius:3px; white-space:nowrap; flex-shrink:0; margin-top:.1rem; }
+  .goal-chip-text { color:var(--navy); font-weight:bold; }
+  .goal-detail-num { background:var(--navy); color:var(--gold); font-size:.75rem; font-weight:bold; padding:.15rem .5rem; border-radius:3px; white-space:nowrap; flex-shrink:0; }
+
+  .section-label { font-size:.68rem; letter-spacing:.13em; text-transform:uppercase; color:var(--gold); margin-bottom:.4rem; }
+  .section-title { font-size:1.5rem; color:var(--navy); font-weight:normal; margin-bottom:1.5rem; border-bottom:2px solid var(--gold); padding-bottom:.5rem; }
+
+  .goal-detail { margin-bottom:1.75rem; padding-bottom:1.75rem; border-bottom:1px dashed var(--border); }
+  .goal-detail:last-of-type { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+  .goal-detail-header { display:flex; align-items:baseline; gap:.75rem; margin-bottom:.6rem; }
+  .goal-detail-title { font-size:1rem; font-weight:bold; color:var(--navy); }
+  .goal-detail p { font-size:.9rem; margin-bottom:.5rem; }
+  .goal-detail ul { margin:0 0 1rem 1.1rem; font-size:.9rem; }
+  .goal-detail ul li { margin-bottom:.3rem; }
+
+  .dim-header { font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); font-weight:bold; border-bottom:1px solid var(--border); padding-bottom:.4rem; margin:1.75rem 0 1rem; }
+
+  .milestone-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:2.5rem; }
+  .milestone-box { padding:1.1rem; border-radius:6px; font-size:.83rem; }
+  .milestone-box.short { background:#e8f0fb; border-top:4px solid #3b82f6; }
+  .milestone-box.mid   { background:#fef3c7; border-top:4px solid #f59e0b; }
+  .milestone-box.long  { background:#d1fae5; border-top:4px solid #10b981; }
+  .milestone-box .mbox-label { font-weight:bold; color:var(--navy); font-size:.8rem; margin-bottom:.5rem; }
+  .milestone-box ul { margin-left:1rem; }
+  .milestone-box ul li { margin-bottom:.25rem; }
+
+  .site-footer { background:var(--navy); color:rgba(255,255,255,.6); padding:2rem; font-size:.8rem; text-align:center; }
+  .site-footer span { color:var(--gold); }
+
+  @media (max-width:900px) {
+    .milestone-grid { grid-template-columns:1fr; }
+    .hero h1 { font-size:1.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="school">Collinsworth School of Performing Arts</div>
+      <div class="university">California Baptist University &nbsp;|&nbsp; Riverside, CA</div>
+    </div>
+    <a href="SoPA_Strategic_Plan_Website.html#pillar2" class="back-link">&#8592; Strategic Plan</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Strategic Plan 2025–2035 &nbsp;|&nbsp; Pillar 2</div>
+    <h1>Academic Excellence</h1>
+    <p class="hero-sub">Pursue measured excellence through rigorous academics, professional performance standards, and graduate career outcomes.</p>
+  </div>
+</div>
+
+<div class="main">
+  <div class="section-label">Pillar 2 Goals &amp; Objectives</div>
+  <div class="section-title">Full Goal Breakdown</div>
+<div class="pillar-statement">Excellence is the relentless pursuit of quality in everything SoPA does: what we teach, how students develop as artists, and whether that preparation translates into meaningful careers. It is measured across three dimensions — Academics, Performance, and Career — that together answer whether SoPA is fulfilling its mission to prepare students for professional impact in the performing arts. Excellence is not a static achievement but a discipline of continuous evaluation, development, and improvement.</div>
+<div class="goals-strip">
+<div class="goals-strip-label">Goals at a Glance</div>
+<div class="goal-chip-row" style="background:#f0f4ff;"><span class="goal-chip-num" style="background:#3b5fa0;">ACAD</span><span style="font-size:0.78rem;color:var(--gray);font-style:italic;">Academics Dimension</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">2.1</span><span class="goal-chip-text">Drive Improvement through Meaningful Assessment</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">2.2</span><span class="goal-chip-text">Strengthen Teaching Effectiveness</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">2.3</span><span class="goal-chip-text">Ensure Curricular Relevance and Rigor</span></div>
+<div class="goal-chip-row" style="background:#f0f4ff;margin-top:0.25rem;"><span class="goal-chip-num" style="background:#3b5fa0;">PERF</span><span style="font-size:0.78rem;color:var(--gray);font-style:italic;">Performance Dimension</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">2.4</span><span class="goal-chip-text">Advance Applied Study and Artistic Development</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">2.5</span><span class="goal-chip-text">Prioritize Ensemble and Production Excellence</span></div>
+<div class="goal-chip-row" style="background:#f0f4ff;margin-top:0.25rem;"><span class="goal-chip-num" style="background:#3b5fa0;">CARE</span><span style="font-size:0.78rem;color:var(--gray);font-style:italic;">Career Dimension</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">2.6</span><span class="goal-chip-text">Track and Improve Graduate Outcomes</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">2.7</span><span class="goal-chip-text">Strengthen Professional Preparation</span></div>
+</div>
+<div class="dim-header">Dimension 1: Academics — Are our programs rigorous, relevant, and effectively taught?</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">2.1</span>
+<span class="goal-detail-title">Drive Improvement through Meaningful Assessment</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">SoPA maintains SLO assessments across all degree programs and conducts program reviews on a five-year cycle. The assessment process currently functions primarily as an accreditation compliance mechanism. A structural barrier compounds this: assessment data is compiled and analyzed at the end of the spring semester, just as faculty go off contract, severing the connection between findings and response.</p>
+<ul>
+<li>Restructure the assessment calendar so interpretive work happens while faculty are on contract — fall data reviewed in January, spring data in the first two weeks of May</li>
+<li>Establish Division Assessment Liaisons — one faculty member per division who facilitates one structured annual conversation about what the data means</li>
+<li>Align SLOs with mission-driven outcomes across all degree programs, ensuring they measure professional readiness, not only academic content mastery</li>
+<li>Redesign the five-year program review process so that each cycle produces 3–5 concrete action items the program must implement before the next review</li>
+</ul>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">2.2</span>
+<span class="goal-detail-title">Strengthen Teaching Effectiveness</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">Faculty are evaluated each semester through student evaluations, but no systematic action steps currently exist to translate evaluation findings into teaching improvement.</p>
+<ul>
+<li>Implement a two-session annual Innovative/Effective Teaching Series — a proactive fall session (August) and a reactive spring session (February) responding to aggregate evaluation patterns</li>
+<li>Provide individualized coaching for faculty identified through student evaluations and peer review as needing support — developmental, not punitive</li>
+<li>Design and implement a formal peer observation and review structure with discipline-specific protocols for studio, ensemble, and production settings</li>
+<li>Build a continually expanding Teaching and Scholarship Resource Library curated for performing arts pedagogy</li>
+<li>Launch an annual Dean's Lecture Series for faculty development, student enrichment, and mentorship connections</li>
+</ul>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">2.3</span>
+<span class="goal-detail-title">Ensure Curricular Relevance and Rigor</span>
+</div>
+<ul>
+<li>Establish a structured industry advisory mechanism tailored to each division: LA industry connections for Commercial Music, school district relationships for Music Education, church and ministry partnerships for Worship Arts, theatre networks for Theatre Arts</li>
+<li>Maintain a structured curricular development pipeline, including the Doctor of Worship Studies launch, feasibility evaluation of a dance program, and expansion of study abroad opportunities</li>
+<li>Review and strengthen placement and entrance examination standards for all programs; for graduate programs, develop comprehensive examination standards reflecting professional and scholarly competency</li>
+</ul>
+</div>
+<div class="dim-header">Dimension 2: Performance — Can our students perform at a professional level by graduation?</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">2.4</span>
+<span class="goal-detail-title">Advance Applied Study and Artistic Development</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">SoPA has developed a comprehensive applied music evaluation framework assessing student development across five areas — Accuracy, Technique, Musicianship, Technical Elements, and Performance — at four key checkpoints: audition, end-of-semester juries, Applied Music Proficiency (end of year two), and recital hearings.</p>
+<ul>
+<li><strong>Near-Term Priority:</strong> Operationalize the Applied Music Proficiency exam as the gateway assessment at the end of the sophomore year — including administrative workflow, calibration processes, clear student expectations from enrollment forward, and a remediation pathway</li>
+<li>Establish jury scoring calibration to ensure consistency across panels, studios, and divisions; analyze jury data at the aggregate level to identify cohort-level trends</li>
+<li>Define clear, division-appropriate progressive performance benchmarks for what students should demonstrate at the end of each year of study</li>
+</ul>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">2.5</span>
+<span class="goal-detail-title">Prioritize Ensemble and Production Excellence</span>
+</div>
+<ul>
+<li>Increase participation in external competitions, festivals, conferences, and adjudicated events — including representation at ACDA, CASMEC, and the Metropolitan Opera Competition</li>
+<li>Commission works by celebrated composers for major ensembles, creating opportunities for world or American premieres; this simultaneously elevates ensemble quality, builds institutional reputation, and contributes to the scholarly mission</li>
+<li>Evaluate and strengthen recital requirements across all SoPA majors, defining what the requirement looks like by division and establishing quality expectations through the recital hearing process</li>
+</ul>
+</div>
+<div class="dim-header">Dimension 3: Career — Are our graduates building meaningful careers in the performing arts?</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">2.6</span>
+<span class="goal-detail-title">Track and Improve Graduate Outcomes</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">SoPA does not currently have a systematic mechanism for tracking graduate career outcomes. Anecdotal knowledge exists among faculty and administrators, but no structured data collection allows SoPA to answer definitively whether graduates are impacting the world through careers in the performing arts.</p>
+<ul>
+<li>Design and implement a graduate outcomes tracking system at 1-, 3-, and 5-year intervals after graduation, capturing employment status, field, specific roles and organizations, graduate school enrollment, and self-reported satisfaction with career preparation</li>
+<li>Identify peer and aspirational institutions for ongoing benchmarking of program offerings, outcomes, faculty-to-student ratios, and competition placements</li>
+<li>Establish a formal process by which graduate outcomes data informs curricular and programmatic decisions; the Associate Dean presents an annual graduate outcomes report to the Dean and Dean's Council</li>
+</ul>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">2.7</span>
+<span class="goal-detail-title">Strengthen Professional Preparation</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">Internship and apprenticeship infrastructure varies significantly across divisions. No school-wide framework exists for ensuring consistent quality, supervision, and evaluation of professional placement experiences.</p>
+<ul>
+<li>Develop and confirm prominent apprenticeship and internship partnerships providing students with meaningful professional experience before graduation — with particular emphasis on LA-area industry for Commercial Music and Production</li>
+<li>Establish a structured industry advisory mechanism for gathering intelligence about what graduates need to succeed professionally</li>
+<li>Develop study abroad opportunities across all divisions that provide students with international artistic and professional experiences</li>
+</ul>
+</div>
+<div class="milestone-grid">
+<div class="milestone-box short">
+<div class="mbox-label">Years 1–3: Foundation</div>
+<ul>
+<li>Assessment calendar restructured; Division Assessment Liaisons in place</li>
+<li>Applied Music Proficiency exam operationalized as sophomore gateway</li>
+<li>Annual Innovative/Effective Teaching Series launched</li>
+<li>Graduate outcomes tracking system designed and implemented</li>
+<li>Industry advisory mechanisms established for each division</li>
+</ul>
+</div>
+<div class="milestone-box mid">
+<div class="mbox-label">Years 4–7: Expansion</div>
+<ul>
+<li>Peer observation protocols fully implemented across all divisions</li>
+<li>Graduate outcomes data informing curricular decisions annually</li>
+<li>Doctor of Worship Studies at full first cohort</li>
+<li>Students and ensembles competing consistently at national level</li>
+<li>Benchmarking confirms SoPA competitive with aspirational peers</li>
+</ul>
+</div>
+<div class="milestone-box long">
+<div class="mbox-label">Years 8–10: Preeminence</div>
+<ul>
+<li>SoPA graduates demonstrably building meaningful careers in the performing arts</li>
+<li>Program review cycle producing concrete, measurable improvements each cycle</li>
+<li>Teaching effectiveness recognized as a defining institutional strength</li>
+</ul>
+</div>
+</div>
+</div>
+
+<footer class="site-footer">
+  <span>Collinsworth School of Performing Arts</span> &nbsp;|&nbsp; California Baptist University &nbsp;|&nbsp; SoPA 2025–2035 Strategic Plan
+</footer>
+</body>
+</html>

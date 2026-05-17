@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SoPA 2025–2035 Strategic Plan | Collinsworth School of Performing Arts</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 18px; }
+  body {
+    font-family: 'Georgia', serif;
+    color: #1a1a1a;
+    background: #fff;
+    line-height: 1.7;
+  }
+
+  :root {
+    --navy:  #1B3A6B;
+    --gold:  #C9A84C;
+    --cream: #F8F5EE;
+    --gray:  #6b7280;
+    --light-gray: #f3f4f6;
+    --border: #e5e7eb;
+  }
+
+  /* Header */
+  .site-header {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .header-brand .school {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+  }
+  .header-brand .university {
+    color: var(--gold);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .header-plan-label {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.78rem;
+    font-style: italic;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #0f2344 0%, #1B3A6B 55%, #2a5298 100%);
+    color: #fff;
+    padding: 4rem 2rem 3.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 40px,
+      rgba(201,168,76,0.04) 40px, rgba(201,168,76,0.04) 80px
+    );
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; }
+  .hero-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    max-width: 700px;
+  }
+  .hero-sub {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 600px;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+  .hero-bhag {
+    background: rgba(201,168,76,0.15);
+    border-left: 4px solid var(--gold);
+    padding: 1.25rem 1.5rem;
+    max-width: 720px;
+    border-radius: 0 4px 4px 0;
+  }
+  .hero-bhag .label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+  .hero-bhag p { font-size: 1rem; color: #fff; }
+
+  /* On-page nav bar */
+  .page-nav-bar {
+    background: var(--cream);
+    border-bottom: 2px solid var(--gold);
+    position: sticky;
+    top: 64px;
+    z-index: 90;
+  }
+  .page-nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .page-nav-inner::-webkit-scrollbar { display: none; }
+  .page-nav-inner a {
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    padding: 0.85rem 1rem;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .page-nav-inner a:hover { border-bottom-color: var(--gold); }
+
+  /* Layout */
+  .main-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* Sidebar */
+  .sidebar { position: sticky; top: 130px; }
+  .sidebar-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 0.75rem;
+  }
+  .sidebar nav a {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--navy);
+    text-decoration: none;
+    padding: 0.4rem 0.75rem;
+    border-left: 3px solid var(--border);
+    margin-bottom: 0.2rem;
+    border-radius: 0 4px 4px 0;
+    transition: border-color 0.2s, background 0.2s;
+    line-height: 1.4;
+  }
+  .sidebar nav a:hover, .sidebar nav a.active {
+    border-left-color: var(--gold);
+    background: var(--cream);
+  }
+  .sidebar nav a.sub {
+    padding-left: 1.5rem;
+    font-size: 0.77rem;
+    color: var(--gray);
+  }
+
+  /* Content typography */
+  .content section { margin-bottom: 4rem; padding-top: 1rem; }
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .content h2 {
+    font-size: 1.9rem;
+    color: var(--navy);
+    font-weight: normal;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 0.6rem;
+  }
+  .content h3 { font-size: 1.2rem; color: var(--navy); font-weight: bold; margin: 1.5rem 0 0.6rem; }
+  .content h4 { font-size: 1rem; color: var(--navy); font-weight: bold; margin: 1.2rem 0 0.5rem; }
+  .content p { margin-bottom: 1rem; }
+  .content ul { margin: 0 0 1rem 1.25rem; }
+  .content ul li { margin-bottom: 0.35rem; }
+
+  /* Mission/Vision boxes */
+  .mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .mv-box { padding: 1.5rem; border-radius: 6px; }
+  .mv-box.mission { background: var(--navy); color: #fff; }
+  .mv-box.vision { background: var(--cream); border: 1px solid var(--border); color: var(--navy); }
+  .mv-box .mv-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .mv-box p { font-size: 1rem; margin: 0; }
+  .bhag-box {
+    background: linear-gradient(135deg, var(--navy) 0%, #2a4f8a 100%);
+    color: #fff;
+    padding: 1.75rem 2rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border-left: 5px solid var(--gold);
+  }
+  .bhag-box .mv-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .bhag-box p { font-size: 1.05rem; margin: 0; }
+
+  /* Executive summary goal cards */
+  .goal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .goal-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: box-shadow 0.2s; }
+  .goal-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+  .goal-card-header {
+    background: var(--navy);
+    color: #fff;
+    padding: 0.85rem 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .goal-number {
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: bold;
+    font-size: 0.85rem;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .goal-card-header .pillar-name { font-size: 0.85rem; font-weight: bold; line-height: 1.3; }
+  .goal-card-body { padding: 1rem 1.1rem; background: #fff; font-size: 0.88rem; color: #444; }
+
+  /* Enrollment table */
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-top: 1rem; }
+  .data-table th { background: var(--navy); color: #fff; padding: 0.6rem 0.9rem; text-align: left; font-size: 0.82rem; }
+  .data-table td { padding: 0.55rem 0.9rem; border-bottom: 1px solid var(--border); }
+  .data-table tr:nth-child(even) td { background: var(--light-gray); }
+  .data-table tr:last-child td { font-weight: bold; background: var(--cream); }
+
+  /* Pillar accordion */
+  .pillar-detail { margin-bottom: 1rem; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .pillar-toggle {
+    width: 100%;
+    background: var(--cream);
+    border: none;
+    padding: 1.1rem 1.5rem;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    transition: background 0.2s;
+  }
+  .pillar-toggle:hover { background: #ede8dc; }
+  .pillar-toggle.open { background: var(--navy); color: #fff; }
+  .pillar-toggle-left { display: flex; align-items: center; gap: 0.9rem; }
+  .pillar-num {
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: bold;
+    font-size: 0.9rem;
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .pillar-title { font-size: 1rem; font-weight: bold; color: var(--navy); line-height: 1.3; }
+  .pillar-toggle.open .pillar-title { color: #fff; }
+  .pillar-subtitle { font-size: 0.78rem; color: var(--gray); font-style: italic; margin-top: 0.15rem; }
+  .pillar-toggle.open .pillar-subtitle { color: rgba(255,255,255,0.65); }
+  .pillar-chevron { color: var(--gray); font-size: 1.1rem; transition: transform 0.3s; flex-shrink: 0; }
+  .pillar-toggle.open .pillar-chevron { transform: rotate(180deg); color: #fff; }
+
+  .pillar-body {
+    display: none;
+    padding: 2rem 2rem 1.5rem;
+    border-top: 2px solid var(--gold);
+    background: #fff;
+  }
+  .pillar-body.open { display: block; }
+
+  .pillar-statement {
+    background: var(--cream);
+    border-left: 4px solid var(--gold);
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+    color: #333;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  /* Goals at a glance strip */
+  .goals-strip {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  .goals-strip-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 0.25rem;
+  }
+  .goal-chip-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #fafafa;
+    font-size: 0.86rem;
+    line-height: 1.4;
+  }
+  .goal-chip-num {
+    background: var(--navy);
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 0.75rem;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .goal-chip-text { color: var(--navy); font-weight: bold; }
+
+  /* Goal detail blocks */
+  .goal-detail {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px dashed var(--border);
+  }
+  .goal-detail:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .goal-detail-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.6rem;
+  }
+  .goal-detail-num {
+    background: var(--navy);
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .goal-detail-title { font-size: 1rem; font-weight: bold; color: var(--navy); }
+  .goal-detail ul { font-size: 0.9rem; margin-left: 1.1rem; }
+  .goal-detail ul li { margin-bottom: 0.3rem; }
+
+  /* Dimension dividers inside Pillar 2 */
+  .dim-header {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: bold;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.4rem;
+    margin: 1.75rem 0 1rem;
+  }
+
+  /* Three-phase milestone grid */
+  .milestone-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .milestone-box { padding: 1.1rem; border-radius: 6px; font-size: 0.83rem; }
+  .milestone-box.short { background: #e8f0fb; border-top: 4px solid #3b82f6; }
+  .milestone-box.mid   { background: #fef3c7; border-top: 4px solid #f59e0b; }
+  .milestone-box.long  { background: #d1fae5; border-top: 4px solid #10b981; }
+  .milestone-box .mbox-label { font-weight: bold; color: var(--navy); font-size: 0.8rem; margin-bottom: 0.5rem; }
+  .milestone-box ul { margin-left: 1rem; }
+  .milestone-box ul li { margin-bottom: 0.25rem; }
+
+  /* Leadership */
+  .people-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 0.75rem 0 1.5rem;
+  }
+  .person-card { background: var(--cream); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; }
+  .person-card .name { font-weight: bold; color: var(--navy); font-size: 0.9rem; }
+  .person-card .role { font-size: 0.8rem; color: var(--gray); margin-top: 0.2rem; }
+
+  /* Footer */
+  .site-footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.7);
+    padding: 2.5rem 2rem;
+    font-size: 0.82rem;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .footer-brand .school-name { color: #fff; font-size: 1rem; font-weight: bold; }
+  .footer-brand .parent { color: var(--gold); margin-top: 0.2rem; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .main-wrapper { grid-template-columns: 1fr; padding-top: 2rem; }
+    .sidebar { position: static; }
+    .hero h1 { font-size: 2rem; }
+    .goal-grid, .mv-grid { grid-template-columns: 1fr; }
+    .people-grid { grid-template-columns: 1fr 1fr; }
+    .milestone-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .people-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<!-- Header -->
+<header class="site-header">
+<div class="header-inner">
+<div class="header-brand">
+<div class="school">Collinsworth School of Performing Arts</div>
+<div class="university">California Baptist University  |  Riverside, CA</div>
+</div>
+<span class="header-plan-label">2025–2035 Strategic Plan</span>
+</div>
+</header>
+<!-- On-page nav -->
+<nav class="page-nav-bar">
+<div class="page-nav-inner">
+<a href="#executive-summary">Executive Summary</a>
+<a href="#pillars">Six Pillars</a>
+<a href="#leadership">Leadership</a>
+</div>
+</nav>
+<!-- Hero -->
+<div class="hero">
+<div class="hero-inner">
+<div class="hero-eyebrow">Strategic Plan 2025–2035</div>
+<h1>SoPA Forward</h1>
+<p class="hero-sub">A ten-year plan for preeminence in Christian higher education performing arts</p>
+<div class="hero-bhag">
+<div class="label">Strategic Goal</div>
+<p>In 2035, the Collinsworth School of Performing Arts is the premier comprehensive performing arts training unit in Christian higher education and is at the forefront of the global conversation regarding the purpose and function of the performing arts in culture.</p>
+</div>
+</div>
+</div>
+<!-- Main content -->
+<div class="main-wrapper">
+<!-- Sidebar -->
+<aside class="sidebar">
+<div class="sidebar-label">On This Page</div>
+<nav>
+<a href="#executive-summary">Executive Summary</a>
+<a href="#pillars">The Six Pillars</a>
+<a class="sub" href="#pillar1">1: Enrollment Growth</a>
+<a class="sub" href="#pillar2">2: Academic Excellence</a>
+<a class="sub" href="#pillar3">3: Institutional Representation</a>
+<a class="sub" href="#pillar4">4: Transformative Culture</a>
+<a class="sub" href="#pillar5">5: Scholarly Contribution</a>
+<a class="sub" href="#pillar6">6: Missional Infrastructure</a>
+<a href="#leadership">Leadership</a>
+</nav>
+</aside>
+<!-- Content -->
+<main class="content">
+<!-- Executive Summary -->
+<section id="executive-summary">
+<div class="section-label">Strategic Plan</div>
+<h2>Executive Summary</h2>
+<p><strong>The Collinsworth School of Performing Arts enters the next decade at a defining moment</strong> — for CBU, for Christian higher education, and for the performing arts industries our students will shape. From a baseline of 284 majors in Fall 2025, SoPA carries the momentum of significant recent program development, a growing national profile, and a deepening sense of mission. This plan charts a clear direction for 2025–2035 by centering the people, programs, and priorities that define SoPA's distinctive identity.</p>
+<div class="mv-grid">
+<div class="mv-box mission">
+<div class="mv-label">Mission</div>
+<p>To inspire students to the highest standards of craft and character, preparing them to impact the world through careers in the performing arts.</p>
+</div>
+<div class="mv-box vision">
+<div class="mv-label">Vision</div>
+<p>A spiritually vibrant community where top-tier artistic and academic preparation converges with intentional personal and professional development.</p>
+</div>
+</div>
+<div class="bhag-box">
+<div class="mv-label">Strategic Goal — 2035</div>
+<p>In 2035, the Collinsworth School of Performing Arts is the premier comprehensive performing arts training unit in Christian higher education and is at the forefront of the global conversation regarding the purpose and function of the performing arts in culture.</p>
+</div>
+</section>
+<!-- The Six Pillars -->
+<section id="pillars">
+<div class="section-label">Strategic Framework</div>
+<h2>The Six Pillars</h2>
+<p>The plan is organized around six interdependent pillars. Each pillar includes a statement, a full breakdown of goals and objectives, measurable targets, and a ten-year milestone horizon. Click any pillar to expand.</p>
+<!-- Pillar 1 -->
+<div class="pillar-detail" id="pillar1">
+<button class="pillar-toggle" onclick="togglePillar(this)">
+<div class="pillar-toggle-left">
+<span class="pillar-num">1</span>
+<div>
+<div class="pillar-title">Enrollment Growth</div>
+<div class="pillar-subtitle">Grow SoPA to 500 majors by 2035 through curricular revision, focused recruitment, and retention efforts.</div>
+</div>
+</div>
+<span class="pillar-chevron">▼</span>
+</button>
+<div class="pillar-body">
+<div class="pillar-statement">Enrollment Growth establishes the strategic foundation for growing the Collinsworth School from 284 majors in 2025 to 500 by 2035 — the threshold at which SoPA can sustain a comprehensive faculty, justify facility investment, and fund the full range of programming that defines a premier performing arts school. Growth is pursued through program expansion, deliberate recruitment, and retention infrastructure designed to bring new student populations into SoPA while ensuring current students persist to graduation.</div>
+<div class="goals-strip">
+<div class="goals-strip-label">Goals at a Glance</div>
+<div class="goal-chip-row"><span class="goal-chip-num">1.1</span><span class="goal-chip-text">Achieve 500-Major Enrollment by Fall 2035</span></div>
+<div class="goal-chip-row"><span class="goal-chip-num">1.2</span><span class="goal-chip-text">Expand Program Architecture to Reach New Student Populations</span></div>
+<div class="goal-chip-row"><span class="goal-chip-num">1.3</span><span class="goal-chip-text">Build Enrollment Infrastructure and Pipeline Systems</span></div>
+<div class="goal-chip-row"><span class="goal-chip-num">1.4</span><span class="goal-chip-text">Improve Student Retention Through Engagement Tracking and Targeted Intervention</span></div>
+</div><div style="margin-top:1.25rem;">
+<a href="SoPA_Pillar_1_Enrollment_Growth.html" style="display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-size:0.85rem;padding:0.55rem 1.2rem;border-radius:4px;font-family:Georgia,serif;letter-spacing:0.02em;" target="_blank">View Full Goal Breakdown →</a>
+</div>
+
+
+
+
+
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="pillar-detail" id="pillar2">
+<button class="pillar-toggle" onclick="togglePillar(this)">
+<div class="pillar-toggle-left">
+<span class="pillar-num">2</span>
+<div>
+<div class="pillar-title">Academic Excellence</div>
+<div class="pillar-subtitle">Pursue measured excellence through rigorous academics, professional performance standards, and graduate career outcomes.</div>
+</div>
+</div>
+<span class="pillar-chevron">▼</span>
+</button>
+<div class="pillar-body">
+<div class="pillar-statement">Excellence is the relentless pursuit of quality in everything SoPA does: what we teach, how students develop as artists, and whether that preparation translates into meaningful careers. It is measured across three dimensions — Academics, Performance, and Career — that together answer whether SoPA is fulfilling its mission to prepare students for professional impact in the performing arts. Excellence is not a static achievement but a discipline of continuous evaluation, development, and improvement.</div>
+<div class="goals-strip">
+<div class="goals-strip-label">Goals at a Glance</div>
+<div class="goal-chip-row" style="background:#f0f4ff;"><span class="goal-chip-num" style="background:#3b5fa0;">ACAD</span><span style="font-size:0.78rem;color:var(--gray);font-style:italic;">Academics Dimension</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">2.1</span><span class="goal-chip-text">Drive Improvement through Meaningful Assessment</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">2.2</span><span class="goal-chip-text">Strengthen Teaching Effectiveness</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">2.3</span><span class="goal-chip-text">Ensure Curricular Relevance and Rigor</span></div>
+<div class="goal-chip-row" style="background:#f0f4ff;margin-top:0.25rem;"><span class="goal-chip-num" style="background:#3b5fa0;">PERF</span><span style="font-size:0.78rem;color:var(--gray);font-style:italic;">Performance Dimension</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">2.4</span><span class="goal-chip-text">Advance Applied Study and Artistic Development</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">2.5</span><span class="goal-chip-text">Prioritize Ensemble and Production Excellence</span></div>
+<div class="goal-chip-row" style="background:#f0f4ff;margin-top:0.25rem;"><span class="goal-chip-num" style="background:#3b5fa0;">CARE</span><span style="font-size:0.78rem;color:var(--gray);font-style:italic;">Career Dimension</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">2.6</span><span class="goal-chip-text">Track and Improve Graduate Outcomes</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">2.7</span><span class="goal-chip-text">Strengthen Professional Preparation</span></div>
+</div><div style="margin-top:1.25rem;">
+<a href="SoPA_Pillar_2_Academic_Excellence.html" style="display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-size:0.85rem;padding:0.55rem 1.2rem;border-radius:4px;font-family:Georgia,serif;letter-spacing:0.02em;" target="_blank">View Full Goal Breakdown →</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="pillar-detail" id="pillar3">
+<button class="pillar-toggle" onclick="togglePillar(this)">
+<div class="pillar-toggle-left">
+<span class="pillar-num">3</span>
+<div>
+<div class="pillar-title">Institutional Representation</div>
+<div class="pillar-subtitle">Leverage every performance, competition, and public engagement to put CBU in front of new audiences and build the institution's reputation.</div>
+</div>
+</div>
+<span class="pillar-chevron">▼</span>
+</button>
+<div class="pillar-body">
+<div class="pillar-statement">The Collinsworth School serves as a primary public face of California Baptist University, representing the institution's mission and values through exceptional artistic performances, strategic community engagement, and an expanding national presence. Like collegiate athletics, the school generates outsized institutional value — drawing tens of thousands of community members to campus annually, building brand equity, deepening denominational relationships, and creating a recruitment pipeline that extends CBU's reach far beyond the classroom.</div>
+<div class="goals-strip">
+<div class="goals-strip-label">Goals at a Glance</div>
+<div class="goal-chip-row"><span class="goal-detail-num">3.1</span><span class="goal-chip-text">Maximize the School's Role as CBU's Cultural Front Door</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">3.2</span><span class="goal-chip-text">Compete and Perform on the National Stage</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">3.3</span><span class="goal-chip-text">Lead the Conversation in Christian Higher Education and Worship Arts</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">3.4</span><span class="goal-chip-text">Build and Celebrate the SoPA Alumni Community</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">3.5</span><span class="goal-chip-text">Tell Our Story — Build a National Brand</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">3.6</span><span class="goal-chip-text">Demonstrate SoPA's Institutional Value to CBU Leadership</span></div>
+</div><div style="margin-top:1.25rem;">
+<a href="SoPA_Pillar_3_Institutional_Representation.html" style="display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-size:0.85rem;padding:0.55rem 1.2rem;border-radius:4px;font-family:Georgia,serif;letter-spacing:0.02em;" target="_blank">View Full Goal Breakdown →</a>
+</div>
+
+
+
+
+
+
+
+</div>
+</div>
+<!-- Pillar 4 -->
+<div class="pillar-detail" id="pillar4">
+<button class="pillar-toggle" onclick="togglePillar(this)">
+<div class="pillar-toggle-left">
+<span class="pillar-num">4</span>
+<div>
+<div class="pillar-title">Transformative Culture</div>
+<div class="pillar-subtitle">Form artists intentionally by cultivating spiritual depth, personal character, professional discipline, and artistic craft.</div>
+</div>
+</div>
+<span class="pillar-chevron">▼</span>
+</button>
+<div class="pillar-body">
+<div class="pillar-statement">Transformative Culture is the Collinsworth School's commitment to intentional formation, shaping not only what students can do, but who they are becoming. SoPA believes that performing artists are shaped not only by technical training but by the full integration of spiritual depth, personal character, professional discipline, and artistic craft. That formation does not happen by accident. It requires intentional design, consistent investment, and a culture where every member of the community — faculty, staff, and students alike — is actively growing.</div>
+<div class="goals-strip">
+<div class="goals-strip-label">Goals at a Glance</div>
+<div class="goal-chip-row"><span class="goal-detail-num">4.1</span><span class="goal-chip-text">Establish SoPA as a Community of Intentional Spiritual Formation</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">4.2</span><span class="goal-chip-text">Build a Healthy, Connected SoPA Community</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">4.3</span><span class="goal-chip-text">Develop the Professional Capacity of Faculty, Staff, and Students</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">4.4</span><span class="goal-chip-text">Sustain a Culture of Active Artistic Practice Across the SoPA Community</span></div>
+</div><div style="margin-top:1.25rem;">
+<a href="SoPA_Pillar_4_Transformative_Culture.html" style="display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-size:0.85rem;padding:0.55rem 1.2rem;border-radius:4px;font-family:Georgia,serif;letter-spacing:0.02em;" target="_blank">View Full Goal Breakdown →</a>
+</div>
+
+
+
+
+
+</div>
+</div>
+<!-- Pillar 5 -->
+<div class="pillar-detail" id="pillar5">
+<button class="pillar-toggle" onclick="togglePillar(this)">
+<div class="pillar-toggle-left">
+<span class="pillar-num">5</span>
+<div>
+<div class="pillar-title">Scholarly Contribution</div>
+<div class="pillar-subtitle">Position SoPA at the forefront of the performing arts conversation through faculty publication, performance, composition, and faith-integrated inquiry.</div>
+</div>
+</div>
+<span class="pillar-chevron">▼</span>
+</button>
+<div class="pillar-body">
+<div class="pillar-statement">Scholarly Contribution is the Collinsworth School's commitment to a faculty culture that produces original, recognized work across the full range of scholarly and artistic expression. SoPA expects and supports faculty contribution through peer-reviewed publication, original composition, professional performance, and faith-integrated inquiry. By 2035, the Collinsworth School of Performing Arts will be at the forefront of the global conversation regarding the purpose and function of the performing arts in culture.</div>
+<div class="goals-strip">
+<div class="goals-strip-label">Goals at a Glance</div>
+<div class="goal-chip-row"><span class="goal-detail-num">5.1</span><span class="goal-chip-text">Expand Diverse Faculty Scholarly Contributions</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">5.2</span><span class="goal-chip-text">Advance Artistic Inquiry and Creative Contribution</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">5.3</span><span class="goal-chip-text">Lead Faith-Integrated and Interdisciplinary Scholarship</span></div>
+</div><div style="margin-top:1.25rem;">
+<a href="SoPA_Pillar_5_Scholarly_Contribution.html" style="display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-size:0.85rem;padding:0.55rem 1.2rem;border-radius:4px;font-family:Georgia,serif;letter-spacing:0.02em;" target="_blank">View Full Goal Breakdown →</a>
+</div>
+
+
+
+
+</div>
+</div>
+<!-- Pillar 6 -->
+<div class="pillar-detail" id="pillar6">
+<button class="pillar-toggle" onclick="togglePillar(this)">
+<div class="pillar-toggle-left">
+<span class="pillar-num">6</span>
+<div>
+<div class="pillar-title">Missional Infrastructure</div>
+<div class="pillar-subtitle">Build the infrastructure of leadership, donor base, facilities, and faculty necessary for long-term success.</div>
+</div>
+</div>
+<span class="pillar-chevron">▼</span>
+</button>
+<div class="pillar-body">
+<div class="pillar-statement">Preeminence requires more than vision. It requires the organizational depth, financial strength, physical environment, and human capital to sustain it. Missional Infrastructure builds the foundational capacity of the Collinsworth School by developing leaders at every level, cultivating a philanthropic culture that funds ambitious goals, investing in facilities worthy of a premier performing arts program, and hiring the faculty and staff needed to serve a growing, diversifying student body.</div>
+<div class="goals-strip">
+<div class="goals-strip-label">Goals at a Glance</div>
+<div class="goal-chip-row"><span class="goal-detail-num">6.1</span><span class="goal-chip-text">Form High-Capacity Leaders across the Organization</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">6.2</span><span class="goal-chip-text">Establish a Sustainable Philanthropic Infrastructure</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">6.3</span><span class="goal-chip-text">Invest in Facility Expansion that Supports Excellence and Growth</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">6.4</span><span class="goal-chip-text">Expand Faculty and Staff Capacity to Support Growth</span></div>
+</div><div style="margin-top:1.25rem;">
+<a href="SoPA_Pillar_6_Missional_Infrastructure.html" style="display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-size:0.85rem;padding:0.55rem 1.2rem;border-radius:4px;font-family:Georgia,serif;letter-spacing:0.02em;" target="_blank">View Full Goal Breakdown →</a>
+</div>
+
+
+
+
+
+</div>
+</div>
+</section>
+<!-- Leadership -->
+<section id="leadership">
+<div class="section-label">Governance</div>
+<h2>Leadership</h2>
+<h3>Administrative Leadership</h3>
+<div class="people-grid">
+<div class="person-card"><div class="name">Joseph Bolin</div><div class="role">Dean</div></div>
+<div class="person-card"><div class="name">David Toledo</div><div class="role">Associate Dean, Educational Effectiveness</div></div>
+<div class="person-card"><div class="name">Gene Moon</div><div class="role">Associate Dean, Performance and Outreach</div></div>
+<div class="person-card"><div class="name">Travis Maclay</div><div class="role">Senior Director, Operations</div></div>
+<div class="person-card"><div class="name">Chessa Williams</div><div class="role">Senior Director, Educational Effectiveness</div></div>
+</div>
+<h3>Division Directors</h3>
+<div class="people-grid">
+<div class="person-card"><div class="name">Dan St. Marseille</div><div class="role">Division Director, Performance and Pedagogy</div></div>
+<div class="person-card"><div class="name">Joshua Golden</div><div class="role">Associate Division Director, Performance and Pedagogy</div></div>
+<div class="person-card"><div class="name">Angela Park</div><div class="role">Division Director, Music Education</div></div>
+<div class="person-card"><div class="name">Chessa Williams</div><div class="role">Division Director, Worship Arts</div></div>
+<div class="person-card"><div class="name">Stevo Evans</div><div class="role">Division Director, Commercial Music and Production</div></div>
+<div class="person-card"><div class="name">Zachary Bortot</div><div class="role">Division Director, Theatre Arts</div></div>
+</div>
+<h3>Area Directors</h3>
+<div class="people-grid">
+<div class="person-card"><div class="name">Joshua Golden</div><div class="role">Choral Studies</div></div>
+<div class="person-card"><div class="name">Brent Levine</div><div class="role">Bands</div></div>
+
+<div class="person-card"><div class="name">Gene Moon</div><div class="role">Orchestral Studies</div></div>
+<div class="person-card"><div class="name">Guy Holliday</div><div class="role">Athletic Bands</div></div>
+<div class="person-card"><div class="name">Jennifer Cruz</div><div class="role">Collaborative Piano</div></div>
+<div class="person-card"><div class="name">Andrés Jaramillo</div><div class="role">Piano Performance</div></div>
+<div class="person-card"><div class="name">Dan St. Marseille</div><div class="role">Jazz Studies</div></div>
+</div>
+<h3>Graduate Program Directors</h3>
+<div class="people-grid">
+<div class="person-card"><div class="name">John Bolin</div><div class="role">MA in Worship Arts</div></div>
+<div class="person-card"><div class="name">Brent Levine</div><div class="role">MM in Music Education</div></div>
+<div class="person-card"><div class="name">Future Hire</div><div class="role">Doctor of Worship Studies</div></div>
+</div>
+</section>
+</main>
+</div>
+<!-- Footer -->
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-brand">
+<div class="school-name">Shelby and Ferne Collinsworth School of Performing Arts</div>
+<div class="parent">California Baptist University  |  Riverside, CA 92504</div>
+<div style="margin-top:0.5rem;color:rgba(255,255,255,0.35);font-style:italic;font-size:0.78rem;">2025–2035 Strategic Plan  |  Working Draft, April 2026</div>
+</div>
+<div>
+<div style="color:rgba(255,255,255,0.4);font-size:0.78rem;">California Baptist University © 2026</div>
+</div>
+</div>
+</footer>
+<script>
+  function togglePillar(btn) {
+    const body = btn.nextElementSibling;
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+  }
+
+  // Sidebar active-link tracking
+  const sections = document.querySelectorAll('section[id]');
+  const sideLinks = document.querySelectorAll('.sidebar nav a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        sideLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.sidebar nav a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

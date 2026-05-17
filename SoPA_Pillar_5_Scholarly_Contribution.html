@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pillar 5: Scholarly Contribution | SoPA 2025–2035 Strategic Plan</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 18px; }
+  body { font-family: 'Georgia', serif; color: #1a1a1a; background: #fff; line-height: 1.7; }
+  :root { --navy:#1B3A6B; --gold:#C9A84C; --cream:#F8F5EE; --gray:#6b7280; --light-gray:#f3f4f6; --border:#e5e7eb; }
+
+  .site-header { background:var(--navy); position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(0,0,0,.3); }
+  .header-inner { max-width:1100px; margin:0 auto; padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:64px; gap:1rem; }
+  .header-brand .school { color:#fff; font-size:.95rem; font-weight:bold; }
+  .header-brand .university { color:var(--gold); font-size:.75rem; letter-spacing:.05em; text-transform:uppercase; }
+  .back-link { color:rgba(255,255,255,.75); font-size:.8rem; text-decoration:none; border:1px solid rgba(255,255,255,.3); padding:.35rem .85rem; border-radius:4px; white-space:nowrap; transition:background .2s; }
+  .back-link:hover { background:rgba(255,255,255,.1); color:#fff; }
+
+  .hero { background:linear-gradient(135deg,#0f2344 0%,#1B3A6B 55%,#2a5298 100%); color:#fff; padding:3rem 2rem 2.5rem; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(201,168,76,.04) 40px,rgba(201,168,76,.04) 80px); }
+  .hero-inner { max-width:1100px; margin:0 auto; position:relative; }
+  .hero-eyebrow { font-size:.75rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:.6rem; }
+  .hero h1 { font-size:2.2rem; font-weight:normal; margin-bottom:.6rem; }
+  .hero-sub { font-size:1rem; color:rgba(255,255,255,.78); font-style:italic; max-width:700px; }
+
+  .main { max-width:1100px; margin:0 auto; padding:2.5rem 2rem 4rem; }
+
+  .pillar-statement { background:var(--cream); border-left:4px solid var(--gold); padding:1rem 1.25rem; margin-bottom:2rem; font-style:italic; color:#333; border-radius:0 4px 4px 0; font-size:.95rem; line-height:1.75; }
+
+  .goals-strip { display:flex; flex-direction:column; gap:.5rem; margin-bottom:2rem; }
+  .goals-strip-label { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gray); margin-bottom:.25rem; }
+  .goal-chip-row { display:flex; align-items:flex-start; gap:.75rem; padding:.6rem .9rem; border:1px solid var(--border); border-radius:6px; background:#fafafa; font-size:.86rem; line-height:1.4; }
+  .goal-chip-num { background:var(--navy); color:var(--gold); font-weight:bold; font-size:.75rem; padding:.15rem .45rem; border-radius:3px; white-space:nowrap; flex-shrink:0; margin-top:.1rem; }
+  .goal-chip-text { color:var(--navy); font-weight:bold; }
+  .goal-detail-num { background:var(--navy); color:var(--gold); font-size:.75rem; font-weight:bold; padding:.15rem .5rem; border-radius:3px; white-space:nowrap; flex-shrink:0; }
+
+  .section-label { font-size:.68rem; letter-spacing:.13em; text-transform:uppercase; color:var(--gold); margin-bottom:.4rem; }
+  .section-title { font-size:1.5rem; color:var(--navy); font-weight:normal; margin-bottom:1.5rem; border-bottom:2px solid var(--gold); padding-bottom:.5rem; }
+
+  .goal-detail { margin-bottom:1.75rem; padding-bottom:1.75rem; border-bottom:1px dashed var(--border); }
+  .goal-detail:last-of-type { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+  .goal-detail-header { display:flex; align-items:baseline; gap:.75rem; margin-bottom:.6rem; }
+  .goal-detail-title { font-size:1rem; font-weight:bold; color:var(--navy); }
+  .goal-detail p { font-size:.9rem; margin-bottom:.5rem; }
+  .goal-detail ul { margin:0 0 1rem 1.1rem; font-size:.9rem; }
+  .goal-detail ul li { margin-bottom:.3rem; }
+
+  .dim-header { font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); font-weight:bold; border-bottom:1px solid var(--border); padding-bottom:.4rem; margin:1.75rem 0 1rem; }
+
+  .milestone-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:2.5rem; }
+  .milestone-box { padding:1.1rem; border-radius:6px; font-size:.83rem; }
+  .milestone-box.short { background:#e8f0fb; border-top:4px solid #3b82f6; }
+  .milestone-box.mid   { background:#fef3c7; border-top:4px solid #f59e0b; }
+  .milestone-box.long  { background:#d1fae5; border-top:4px solid #10b981; }
+  .milestone-box .mbox-label { font-weight:bold; color:var(--navy); font-size:.8rem; margin-bottom:.5rem; }
+  .milestone-box ul { margin-left:1rem; }
+  .milestone-box ul li { margin-bottom:.25rem; }
+
+  .site-footer { background:var(--navy); color:rgba(255,255,255,.6); padding:2rem; font-size:.8rem; text-align:center; }
+  .site-footer span { color:var(--gold); }
+
+  @media (max-width:900px) {
+    .milestone-grid { grid-template-columns:1fr; }
+    .hero h1 { font-size:1.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="school">Collinsworth School of Performing Arts</div>
+      <div class="university">California Baptist University &nbsp;|&nbsp; Riverside, CA</div>
+    </div>
+    <a href="SoPA_Strategic_Plan_Website.html#pillar5" class="back-link">&#8592; Strategic Plan</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Strategic Plan 2025–2035 &nbsp;|&nbsp; Pillar 5</div>
+    <h1>Scholarly Contribution</h1>
+    <p class="hero-sub">Position SoPA at the forefront of the performing arts conversation through faculty publication, performance, composition, and faith-integrated inquiry.</p>
+  </div>
+</div>
+
+<div class="main">
+  <div class="section-label">Pillar 5 Goals &amp; Objectives</div>
+  <div class="section-title">Full Goal Breakdown</div>
+<div class="pillar-statement">Scholarly Contribution is the Collinsworth School's commitment to a faculty culture that produces original, recognized work across the full range of scholarly and artistic expression. SoPA expects and supports faculty contribution through peer-reviewed publication, original composition, professional performance, and faith-integrated inquiry. By 2035, the Collinsworth School of Performing Arts will be at the forefront of the global conversation regarding the purpose and function of the performing arts in culture.</div>
+<div class="goals-strip">
+<div class="goals-strip-label">Goals at a Glance</div>
+<div class="goal-chip-row"><span class="goal-detail-num">5.1</span><span class="goal-chip-text">Expand Diverse Faculty Scholarly Contributions</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">5.2</span><span class="goal-chip-text">Advance Artistic Inquiry and Creative Contribution</span></div>
+<div class="goal-chip-row"><span class="goal-detail-num">5.3</span><span class="goal-chip-text">Lead Faith-Integrated and Interdisciplinary Scholarship</span></div>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">5.1</span>
+<span class="goal-detail-title">Expand Diverse Faculty Scholarly Contributions</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">Increase the volume and visibility of faculty scholarship across all four Boyer domains — Discovery, Integration, Application, and Teaching — with particular emphasis on growing peer-reviewed publication and conference presence as the school's academic profile matures.</p>
+<ul>
+<li>Maintain an annual faculty research agenda requirement tracking output and growth across all four Boyer domains</li>
+<li>Support scholarly productivity through strategic course assignment, prioritizing repeat course assignments for faculty with active research agendas to reduce preparation burden and protect creative and scholarly time</li>
+<li>Develop an internal travel funding policy and budget to support conference presentations and professional performances</li>
+<li>Build a publicly accessible faculty scholarship portfolio on the school's website</li>
+<li>Recognize and celebrate faculty scholarly achievement through annual awards and school communications</li>
+<li>Measurable target: 100% of full-time faculty maintain an active research agenda with documented year-over-year growth across at least one Boyer domain</li>
+</ul>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">5.2</span>
+<span class="goal-detail-title">Advance Artistic Inquiry and Creative Contribution</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">Establish the Collinsworth School as a recognized site of significant creative output through professional performances, original compositions, new works, and recordings at the national and international level.</p>
+<ul>
+<li>Establish expectations and tracking for faculty professional performances at regional, national, and international venues</li>
+<li>Build a culture of original composition and new work development across Music and Theatre Arts faculty</li>
+<li>Pursue recording projects and produced albums that document and distribute faculty creative work beyond the performance moment</li>
+<li>Connect faculty artistic output to the school's national visibility strategy — ensuring performances and premieres generate press, reputation, and recruitment pipeline</li>
+<li>Develop a SoPA record label as a long-term vehicle for faculty and student creative output, institutional brand, and revenue generation (target: launched by Year 10)</li>
+</ul>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">5.3</span>
+<span class="goal-detail-title">Lead Faith-Integrated and Interdisciplinary Scholarship</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">Develop a body of scholarly work that is distinctively Christian and interdisciplinary, connecting performing arts with theology, cultural studies, and faith formation.</p>
+<ul>
+<li>Actively connect SoPA faculty to CBU's existing faith integration infrastructure, including TLC fellowships, the Journal of Faith in the Academic Profession, and the Faith Integration in the Academy Conference</li>
+<li>Develop performing arts-specific faith integration scholarship expectations within the annual research agenda framework</li>
+<li>Pursue publications and presentations that explicitly advance the national conversation about Christian faith and performing arts practice</li>
+<li>Develop and publish a faculty-authored edited volume on faith formation across the performing arts disciplines, with chapters representing each division of SoPA (target: published by Year 5)</li>
+<li>Position the CCCU Arts Deans Leadership Summit as a convening point for faith-integrated performing arts scholarship across Christian higher education</li>
+<li>Target: SoPA faculty presenting faith-integrated scholarship at national conferences annually by Year 3</li>
+</ul>
+</div>
+<div class="milestone-grid">
+<div class="milestone-box short">
+<div class="mbox-label">Years 1–3: Foundation</div>
+<ul>
+<li>Annual faculty research agenda requirement implemented across all full-time faculty</li>
+<li>Internal travel funding policy and budget established</li>
+<li>Faculty scholarship portfolio live on school website</li>
+<li>SoPA faculty presenting faith-integrated scholarship at national conferences</li>
+<li>CCCU Arts Deans Summit and Worship West established as annual convenings</li>
+</ul>
+</div>
+<div class="milestone-box mid">
+<div class="mbox-label">Years 4–7: Expansion</div>
+<ul>
+<li>Faculty-authored edited volume on faith and performing arts published by Year 5</li>
+<li>Faculty consistently presenting and performing at national and international venues</li>
+<li>Recording projects and produced works documenting and distributing faculty creative output</li>
+<li>CCCU Arts Deans Summit recognized as the premier convening for faith-integrated performing arts scholarship</li>
+</ul>
+</div>
+<div class="milestone-box long">
+<div class="mbox-label">Years 8–10: Preeminence</div>
+<ul>
+<li>SoPA record label launched as a vehicle for faculty and student creative output</li>
+<li>100% of full-time faculty maintaining active research agendas with documented growth</li>
+<li>SoPA recognized nationally for leadership in faith-integrated performing arts inquiry</li>
+</ul>
+</div>
+</div>
+</div>
+
+<footer class="site-footer">
+  <span>Collinsworth School of Performing Arts</span> &nbsp;|&nbsp; California Baptist University &nbsp;|&nbsp; SoPA 2025–2035 Strategic Plan
+</footer>
+</body>
+</html>

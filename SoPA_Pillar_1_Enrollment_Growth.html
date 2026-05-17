@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pillar 1: Enrollment Growth | SoPA 2025–2035 Strategic Plan</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 18px; }
+  body { font-family: 'Georgia', serif; color: #1a1a1a; background: #fff; line-height: 1.7; }
+  :root { --navy:#1B3A6B; --gold:#C9A84C; --cream:#F8F5EE; --gray:#6b7280; --light-gray:#f3f4f6; --border:#e5e7eb; }
+
+  .site-header { background:var(--navy); position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(0,0,0,.3); }
+  .header-inner { max-width:1100px; margin:0 auto; padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:64px; gap:1rem; }
+  .header-brand .school { color:#fff; font-size:.95rem; font-weight:bold; }
+  .header-brand .university { color:var(--gold); font-size:.75rem; letter-spacing:.05em; text-transform:uppercase; }
+  .back-link { color:rgba(255,255,255,.75); font-size:.8rem; text-decoration:none; border:1px solid rgba(255,255,255,.3); padding:.35rem .85rem; border-radius:4px; white-space:nowrap; transition:background .2s; }
+  .back-link:hover { background:rgba(255,255,255,.1); color:#fff; }
+
+  .hero { background:linear-gradient(135deg,#0f2344 0%,#1B3A6B 55%,#2a5298 100%); color:#fff; padding:3rem 2rem 2.5rem; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; inset:0; background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(201,168,76,.04) 40px,rgba(201,168,76,.04) 80px); }
+  .hero-inner { max-width:1100px; margin:0 auto; position:relative; }
+  .hero-eyebrow { font-size:.75rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:.6rem; }
+  .hero h1 { font-size:2.2rem; font-weight:normal; margin-bottom:.6rem; }
+  .hero-sub { font-size:1rem; color:rgba(255,255,255,.78); font-style:italic; max-width:700px; }
+
+  .main { max-width:1100px; margin:0 auto; padding:2.5rem 2rem 4rem; }
+
+  .pillar-statement { background:var(--cream); border-left:4px solid var(--gold); padding:1rem 1.25rem; margin-bottom:2rem; font-style:italic; color:#333; border-radius:0 4px 4px 0; font-size:.95rem; line-height:1.75; }
+
+  .goals-strip { display:flex; flex-direction:column; gap:.5rem; margin-bottom:2rem; }
+  .goals-strip-label { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gray); margin-bottom:.25rem; }
+  .goal-chip-row { display:flex; align-items:flex-start; gap:.75rem; padding:.6rem .9rem; border:1px solid var(--border); border-radius:6px; background:#fafafa; font-size:.86rem; line-height:1.4; }
+  .goal-chip-num { background:var(--navy); color:var(--gold); font-weight:bold; font-size:.75rem; padding:.15rem .45rem; border-radius:3px; white-space:nowrap; flex-shrink:0; margin-top:.1rem; }
+  .goal-chip-text { color:var(--navy); font-weight:bold; }
+  .goal-detail-num { background:var(--navy); color:var(--gold); font-size:.75rem; font-weight:bold; padding:.15rem .5rem; border-radius:3px; white-space:nowrap; flex-shrink:0; }
+
+  .section-label { font-size:.68rem; letter-spacing:.13em; text-transform:uppercase; color:var(--gold); margin-bottom:.4rem; }
+  .section-title { font-size:1.5rem; color:var(--navy); font-weight:normal; margin-bottom:1.5rem; border-bottom:2px solid var(--gold); padding-bottom:.5rem; }
+
+  .goal-detail { margin-bottom:1.75rem; padding-bottom:1.75rem; border-bottom:1px dashed var(--border); }
+  .goal-detail:last-of-type { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+  .goal-detail-header { display:flex; align-items:baseline; gap:.75rem; margin-bottom:.6rem; }
+  .goal-detail-title { font-size:1rem; font-weight:bold; color:var(--navy); }
+  .goal-detail p { font-size:.9rem; margin-bottom:.5rem; }
+  .goal-detail ul { margin:0 0 1rem 1.1rem; font-size:.9rem; }
+  .goal-detail ul li { margin-bottom:.3rem; }
+
+  .dim-header { font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); font-weight:bold; border-bottom:1px solid var(--border); padding-bottom:.4rem; margin:1.75rem 0 1rem; }
+
+  .milestone-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:2.5rem; }
+  .milestone-box { padding:1.1rem; border-radius:6px; font-size:.83rem; }
+  .milestone-box.short { background:#e8f0fb; border-top:4px solid #3b82f6; }
+  .milestone-box.mid   { background:#fef3c7; border-top:4px solid #f59e0b; }
+  .milestone-box.long  { background:#d1fae5; border-top:4px solid #10b981; }
+  .milestone-box .mbox-label { font-weight:bold; color:var(--navy); font-size:.8rem; margin-bottom:.5rem; }
+  .milestone-box ul { margin-left:1rem; }
+  .milestone-box ul li { margin-bottom:.25rem; }
+
+  .site-footer { background:var(--navy); color:rgba(255,255,255,.6); padding:2rem; font-size:.8rem; text-align:center; }
+  .site-footer span { color:var(--gold); }
+
+  @media (max-width:900px) {
+    .milestone-grid { grid-template-columns:1fr; }
+    .hero h1 { font-size:1.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="school">Collinsworth School of Performing Arts</div>
+      <div class="university">California Baptist University &nbsp;|&nbsp; Riverside, CA</div>
+    </div>
+    <a href="SoPA_Strategic_Plan_Website.html#pillar1" class="back-link">&#8592; Strategic Plan</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Strategic Plan 2025–2035 &nbsp;|&nbsp; Pillar 1</div>
+    <h1>Enrollment Growth</h1>
+    <p class="hero-sub">Grow SoPA to 500 majors by 2035 through curricular revision, focused recruitment, and retention efforts.</p>
+  </div>
+</div>
+
+<div class="main">
+  <div class="section-label">Pillar 1 Goals &amp; Objectives</div>
+  <div class="section-title">Full Goal Breakdown</div>
+<div class="pillar-statement">Enrollment Growth establishes the strategic foundation for growing the Collinsworth School from 284 majors in 2025 to 500 by 2035 — the threshold at which SoPA can sustain a comprehensive faculty, justify facility investment, and fund the full range of programming that defines a premier performing arts school. Growth is pursued through program expansion, deliberate recruitment, and retention infrastructure designed to bring new student populations into SoPA while ensuring current students persist to graduation.</div>
+<div class="goals-strip">
+<div class="goals-strip-label">Goals at a Glance</div>
+<div class="goal-chip-row"><span class="goal-chip-num">1.1</span><span class="goal-chip-text">Achieve 500-Major Enrollment by Fall 2035</span></div>
+<div class="goal-chip-row"><span class="goal-chip-num">1.2</span><span class="goal-chip-text">Expand Program Architecture to Reach New Student Populations</span></div>
+<div class="goal-chip-row"><span class="goal-chip-num">1.3</span><span class="goal-chip-text">Build Enrollment Infrastructure and Pipeline Systems</span></div>
+<div class="goal-chip-row"><span class="goal-chip-num">1.4</span><span class="goal-chip-text">Improve Student Retention Through Engagement Tracking and Targeted Intervention</span></div>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">1.1</span>
+<span class="goal-detail-title">Achieve 500-Major Enrollment by Fall 2035  <a href="SoPA_Enrollment_Forecast.html" style="font-size:0.78rem;font-weight:normal;color:var(--gold);text-decoration:none;border:1px solid var(--gold);padding:0.15rem 0.55rem;border-radius:3px;vertical-align:middle;">View Forecast →</a></span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">SoPA's ten-year enrollment trajectory targets 500 total majors by FA35 — achievable through a combination of organic growth, program restructuring, and new program development. Reaching 429 by FA30 serves as the mid-decade checkpoint for assessing pace and making course corrections.</p>
+<ul>
+<li>Grow total enrollment to 350 or above by FA28, representing early-stage validation that growth strategies are taking hold across all divisions</li>
+<li>Reach 429 total majors by FA30, reflecting steady division-level progress and the launch of new programs beginning to contribute enrollment</li>
+<li>Achieve 500 total majors by FA35 — anchored by Commercial Music and Production reaching 156 majors, Music Education 92, Performance and Pedagogy 110, Worship Arts 82, and Theatre Arts 65</li>
+<li>Monitor division-level pace annually and implement corrective actions when any division falls more than 15% below projection for two consecutive years</li>
+</ul>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">1.2</span>
+<span class="goal-detail-title">Expand Program Architecture to Reach New Student Populations</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">Organic growth within existing programs will not be sufficient to reach 500 majors. The most significant enrollment gains in the forecast come from deliberate program expansion: new degrees, restructured programs, and double-major pathways that open SoPA to students who would not previously have had a pathway into the school.</p>
+<ul>
+<li>Restructure the existing BM Studio Production into the BS Production Design and Technology, eliminating the audition requirement and adding a Live Production concentration</li>
+<li>Develop and launch the BS Entertainment Industry Studies as a joint program with the School of Business — targeting students passionate about the entertainment industry who do not identify as performers or producers</li>
+<li>Integrate the BM Songwriting into BM Commercial Performance as an optional Songwriting Concentration by FA27; manage the BM Songwriting teach-out through FA27</li>
+<li>Pursue WSCUC approval for BS Entertainment Industry Studies by October 2026, targeting a Fall 2027 launch</li>
+<li>Launch the MM Music Education (online/hybrid) in FA26, targeting steady-state enrollment of 24 students by FA30</li>
+<li>Launch the Doctor of Worship Studies (online/hybrid) in FA27, positioning SoPA as a national leader in graduate-level worship arts formation</li>
+<li>Sustain MA Worship Arts enrollment at steady state (22–24 students) through intentional recruitment within denominational and church networks</li>
+</ul>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">1.3</span>
+<span class="goal-detail-title">Build Enrollment Infrastructure and Pipeline Systems</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">SoPA must build the recruitment relationships, audition infrastructure, scholarship tools, and retention systems that turn prospective students into enrolled majors and enrolled majors into completers.</p>
+<ul>
+<li>Establish division-specific recruitment relationships with high schools, community colleges, community arts organizations, and church networks</li>
+<li>Develop a scholarship strategy by division that positions SoPA competitively in its primary recruitment markets</li>
+<li>Complete and maintain current four-year degree plans for all SoPA majors (target: published by FA26)</li>
+<li>Develop and maintain competitive analysis documentation for each program, updated annually</li>
+<li>Partner with CBU Admissions to develop SoPA-specific recruitment collateral, audition event experiences, and digital presence</li>
+</ul>
+</div>
+<div class="goal-detail">
+<div class="goal-detail-header">
+<span class="goal-detail-num">1.4</span>
+<span class="goal-detail-title">Improve Student Retention Through Engagement Tracking and Targeted Intervention</span>
+</div>
+<p style="font-size:0.9rem;margin-bottom:0.5rem;">Enrollment growth is undermined when students leave before completing their degrees. Reaching 500 majors requires not only recruiting students into SoPA programs but keeping them enrolled and progressing toward graduation.</p>
+<ul>
+<li>Identify and track meaningful engagement metrics for first-year students including applied lesson attendance, ensemble participation, advising contact frequency, and academic standing</li>
+<li>Establish a first-year student engagement review process conducted at the mid-point of each semester beginning SP27</li>
+<li>Track six-year graduation rates by program and division, disaggregated where possible by entry year, scholarship status, and concentration</li>
+<li>Target: first-year retention rate of 85% or higher across all divisions by Year 5</li>
+<li>Target: improve six-year graduation rate from current baseline by 10 percentage points by FA35</li>
+</ul>
+</div>
+<div class="milestone-grid">
+<div class="milestone-box short">
+<div class="mbox-label">Years 1–3: Foundation</div>
+<ul>
+<li>Four-year degree plans completed and published</li>
+<li>BS Entertainment Industry Studies submitted for approval; FA27 launch</li>
+<li>MM Music Education launches FA26 with inaugural cohort</li>
+<li>First-year engagement metrics established and data collection initiated</li>
+<li>Division-specific recruitment plans documented</li>
+</ul>
+</div>
+<div class="milestone-box mid">
+<div class="mbox-label">Years 4–7: Expansion</div>
+<ul>
+<li>BS EIS reaches 40+ majors; Commercial Music surpasses 100</li>
+<li>Doctor of Worship Studies at full first cohort</li>
+<li>Total enrollment reaches 429 by FA30</li>
+<li>First-year retention rate at 85%+ across all divisions</li>
+</ul>
+</div>
+<div class="milestone-box long">
+<div class="mbox-label">Years 8–10: Preeminence</div>
+<ul>
+<li>500 total SoPA majors by FA35</li>
+<li>Commercial Music and Production reaches 156 majors</li>
+<li>Six-year graduation rate improved 10+ percentage points from FA25 baseline</li>
+</ul>
+</div>
+</div>
+</div>
+
+<footer class="site-footer">
+  <span>Collinsworth School of Performing Arts</span> &nbsp;|&nbsp; California Baptist University &nbsp;|&nbsp; SoPA 2025–2035 Strategic Plan
+</footer>
+</body>
+</html>
